@@ -1,7 +1,6 @@
 package model.inventory.concrete_items;
 
-import java.util.HashMap;
-
+import model.attribute.StatManager;
 import model.inventory.Inventory;
 import model.inventory.Item;
 
@@ -142,5 +141,15 @@ public class Bag extends Item {
      */
     public int getTotalSpace() {
         return this.items.length;
+    }
+
+    /**
+     * The applyBuff function from the abstract Item class
+     * calls the stat manager's method for handling bags
+     * 
+     * @param manager the manager to call methods on
+     */
+    public void applyBuff(StatManager manager) {
+        manager.handleBag(this);
     }
 }

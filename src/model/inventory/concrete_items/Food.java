@@ -1,7 +1,6 @@
 package model.inventory.concrete_items;
 
-import java.util.HashMap;
-
+import model.attribute.StatManager;
 import model.inventory.Inventory;
 import model.inventory.Item;
 
@@ -44,5 +43,15 @@ public class Food extends Item {
      */
     public String getType() {
         return Food.TYPE;
+    }
+
+    /**
+     * The applyBuff function from the abstract Item class
+     * calls the stat manager's method for handling food
+     * 
+     * @param manager the manager to call methods on
+     */
+    public void applyBuff(StatManager manager) {
+        manager.handleFood(this);
     }
 }

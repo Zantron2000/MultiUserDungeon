@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.HashMap;
-
 import org.junit.Test;
 import org.junit.platform.commons.annotation.Testable;
 
@@ -336,7 +334,7 @@ public class TestInventory {
         
         assertEquals(weapon, weaponBuffs);
         assertEquals(armor, armorBuffs);
-        assertNull(bagBuffs);
+        assertEquals(bag, bagBuffs);
         assertEquals(food, foodBuffs);
         assertEquals(buff, buffBuffs);
         assertEquals(expectedString, inventory.toString());
@@ -372,7 +370,7 @@ public class TestInventory {
 
         Item item = inventory.useItem(0, 0);
 
-        assertNull(item);
+        assertEquals(bag, item);
         assertEquals(expectedString, inventory.toString());
     }
 

@@ -2,6 +2,8 @@ package model.inventory;
 
 import java.util.HashMap;
 
+import model.attribute.StatManager;
+
 /**
  * The item interface representing all items to exist in the game.
  * Sets requirements for obtaining information about the item.
@@ -41,24 +43,6 @@ public abstract class Item {
     }
 
     /**
-     * Gets the value of the item in gold pieces
-     * 
-     * @return the value of the item in gold
-     */
-    public int getGoldValue() {
-        return this.price;
-    }
-
-    /**
-     * Obtains and returns a collection of the stats it will modify
-     * 
-     * @return a HashMap mapping buff types to their increases
-     */
-    public HashMap<String, Integer> getBuffs() {
-        return this.buffs;
-    }
-
-    /**
      * Checks to see if the item is equippable
      * 
      * @return a boolean depending on if the item can be equipped
@@ -80,6 +64,31 @@ public abstract class Item {
      */
     public abstract Item useItem(Inventory inventory);
 
+    /**
+     * Passes the item into the stats manager by calling the proper command
+     * 
+     * @param manager the stats manager to call on
+     */
+    public abstract void applyBuff(StatManager manager);
+
+    /**
+     * Gets the value of the item in gold pieces
+     * 
+     * @return the value of the item in gold
+     */
+    public int getGoldValue() {
+        return this.price;
+    }
+
+    /**
+     * Obtains and returns a collection of the stats it will modify
+     * 
+     * @return a HashMap mapping buff types to their increases
+     */
+    public HashMap<String, Integer> getBuffs() {
+        return this.buffs;
+    }
+    
     /**
      * The class's toString method
      */

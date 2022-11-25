@@ -1,7 +1,5 @@
 package model.inventory;
 
-import java.util.HashMap;
-
 import model.inventory.concrete_items.Armor;
 import model.inventory.concrete_items.Bag;
 import model.inventory.concrete_items.Buff;
@@ -238,7 +236,7 @@ public class Inventory {
             this.addItem(bag);
         }
 
-        return null;
+        return bag;
     }
 
     /**

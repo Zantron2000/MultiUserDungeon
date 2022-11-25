@@ -63,12 +63,15 @@ public class Inventory {
      * bag that can fit it
      * 
      * @param item the item to add into the inventory
+     * @return boolean based on if the item was successfully added
      */
-    public void addItem(Item item) {
+    public boolean addItem(Item item) {
         if(item != null) {
             if(item.getType().equals("bag") && this.hasFreeSlot()) {
                 this.addBag(item);
-            } else {
+
+                return true;
+            } else if(this.isFull()) {
                 
                 for(Bag bag : bags) {
                     if(bag != null && !bag.isFull()) {
@@ -76,8 +79,12 @@ public class Inventory {
                         break;
                     }
                 }
+
+                return true;
             }
         }
+
+        return false;
     }
 
     /**

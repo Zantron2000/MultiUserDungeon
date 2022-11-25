@@ -1,7 +1,6 @@
 package model.attribute;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import model.inventory.Item;
 import model.inventory.concrete_items.Armor;
@@ -35,15 +34,6 @@ public class StatManager {
         this.flatBuffs.add(new Stat(attack, defense, -1));
         this.maxHealth = health;
         this.health = health;
-    }
-
-    /**
-     * Checks to see if the health has dropped below 0
-     * 
-     * @return boolean based on if health has dropped below 0
-     */
-    public boolean isDead() {
-        return this.health <= 0;
     }
 
     /**
@@ -136,6 +126,24 @@ public class StatManager {
      * @param bag the bag to create a stat from
      */
     public void handleBag(Bag bag) {}
+    
+    /**
+     * The toString function, gets string representation of the current stats
+     * 
+     * @return the string representation of the StatManager
+     */
+    public String toString() {
+        return this.health + "/" + this.maxHealth + " " + this.attack() + " attack " + this.getDefense() + " defense";
+    }
+
+    /**
+     * Checks to see if the health has dropped below 0
+     * 
+     * @return boolean based on if health has dropped below 0
+     */
+    private boolean isDead() {
+        return this.health <= 0;
+    }
 
     /**
      * Advances all flat buffs and removes any that

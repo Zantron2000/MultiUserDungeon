@@ -133,7 +133,7 @@ public class StatManager {
      * @return the string representation of the StatManager
      */
     public String toString() {
-        return this.health + "/" + this.maxHealth + " " + this.attack() + " attack " + this.getDefense() + " defense";
+        return this.health + "/" + this.maxHealth + " health " + this.attack() + " attack " + this.getDefense() + " defense";
     }
 
     /**

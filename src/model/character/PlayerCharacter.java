@@ -16,7 +16,7 @@ public class PlayerCharacter extends Character {
      * @param description the description of the PlayerCharacter
      */
     public PlayerCharacter(String name, String description) {
-        super(name, description, BASE_HEALTH, BASE_ATTACK, BASE_DEFENSE);
+        super(name, description, BASE_ATTACK, BASE_DEFENSE, BASE_HEALTH);
         inventory = new Inventory();
     }
 
@@ -32,12 +32,12 @@ public class PlayerCharacter extends Character {
     /**
      * Destroys an item from the inventory
      * 
-     * @param bagNumber  the bag number the item is in
-     * @param slotNumber the slot number the item is in
+     * @param bagNum  the bag number the item is in
+     * @param slotNum the slot number the item is in
      * @return Item that was removed from the inventory
      */
-    public Item removeItem(int bagNumber, int slotNumber) {
-        return this.inventory.removeItem(bagNumber, slotNumber);
+    public Item removeItem(int bagNum, int slotNum) {
+        return this.inventory.removeItem(bagNum, slotNum);
     }
 
     /**
@@ -51,9 +51,19 @@ public class PlayerCharacter extends Character {
         return this.inventory.addItem(item);
     }
 
+    /**
+     * Uses an item in the user's inventory and applies any buffs
+     * from it into the user's stats
+     * 
+     * @param bagNum  the bag number the item is in
+     * @param slotNum the slot number the item is in
+     */
     public void useItem(int bagNum, int slotNum) {
         Item item = this.inventory.useItem(bagNum, slotNum);
-        item.applyBuff(this.manager);
+
+        if(item != null) {
+            item.applyBuff(this.manager);
+        }
     }
 
     /**

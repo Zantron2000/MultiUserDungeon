@@ -392,11 +392,11 @@ public class TestInventory {
         
         Item bag1 = new Bag("Small Bag", 50, 5);
 
-        inventory.addItem(bag1);
-        inventory.addItem(weapon);
-        inventory.addItem(armor);
-        inventory.addItem(weapon1);
-        inventory.addItem(armor1);
+        assertTrue(inventory.addItem(bag1));
+        assertTrue(inventory.addItem(weapon));
+        assertTrue(inventory.addItem(armor));
+        assertTrue(inventory.addItem(weapon1));
+        assertTrue(inventory.addItem(armor1));
         
         inventory.useItem(0, 0);
         inventory.useItem(0, 1);

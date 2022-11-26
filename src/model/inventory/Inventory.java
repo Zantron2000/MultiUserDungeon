@@ -71,7 +71,7 @@ public class Inventory {
                 this.addBag(item);
 
                 return true;
-            } else if(this.isFull()) {
+            } else if(!this.isFull()) {
                 
                 for(Bag bag : bags) {
                     if(bag != null && !bag.isFull()) {

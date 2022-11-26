@@ -24,6 +24,10 @@ public class DiurnalNPC extends NonPlayerCharacter {
         super(name, description);
     }
 
+    /**
+     * The DiurnalNPC's toString method, displays information on
+     * the character's state and stats
+     */
     public String toString() {
         return "(Diurnal) " + super.toString();
     }

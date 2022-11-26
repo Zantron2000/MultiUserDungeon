@@ -3,10 +3,17 @@ package model.character;
 import model.inventory.Inventory;
 import model.inventory.Item;
 
+/**
+ * Represents a player character in the game, keeps track of inventory of
+ * character along with methods to use and remove items
+ */
 public class PlayerCharacter extends Character {
     private static int BASE_HEALTH = 100; // The base health for a player character
     private static int BASE_ATTACK = 10; // The base attack for a player character
-    private static int BASE_DEFENSE = 10; // The base defense for a player character
+    private static int BASE_DEFENSE = 0; // The base defense for a player character
+    private static String REPRESENTATION = "P"; // The tile representation of an NPC
+
+
     private Inventory inventory; // The inventory manager for a player character
 
     /**
@@ -65,6 +72,13 @@ public class PlayerCharacter extends Character {
             item.applyBuff(this.manager);
         }
     }
+
+    /**
+     * The getRepresentation function from the abstract Character class
+     */
+    public String getRepresentation() {
+        return PlayerCharacter.REPRESENTATION;
+    } 
 
     /**
      * The class's toString method

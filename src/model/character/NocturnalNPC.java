@@ -24,6 +24,10 @@ public class NocturnalNPC extends NonPlayerCharacter {
         super(name, description);
     }
 
+    /**
+     * The NocturnalNPC's toString method, displays information on
+     * the character's state and stats
+     */
     public String toString() {
         return "(Nocturnal) " + super.toString();
     }

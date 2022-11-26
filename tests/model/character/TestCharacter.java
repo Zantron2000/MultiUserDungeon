@@ -45,21 +45,21 @@ public class TestCharacter {
 
     @Test
     public void testPlayerCharacter() {
-        String expectedString = "Player Player: A Player | 100/100 health 10 attack 10 defense";
-        String expectedHurtString = "Player Player: A Player | 1/100 health 10 attack 10 defense";
+        String expectedString = "Player Player: A Player | 100/100 health 10 attack 0 defense";
+        String expectedHurtString = "Player Player: A Player | 1/100 health 10 attack 0 defense";
         PlayerCharacter pc = new PlayerCharacter("Player", "A Player");
 
 
         assertEquals(expectedString, pc.toString());
         assertEquals(10, pc.attack());
-        assertFalse(pc.takeDamage(109));
+        assertFalse(pc.takeDamage(99));
         assertEquals(expectedHurtString, pc.toString());
         assertTrue(pc.takeDamage(10));
     }
 
     @Test
     public void testPlayerCharacterUse() {
-        String expectedString = "Player Player: A Player | 100/100 health 20 attack 10 defense";
+        String expectedString = "Player Player: A Player | 100/100 health 20 attack 0 defense";
         PlayerCharacter pc = new PlayerCharacter("Player", "A Player");
         Item sword = new Weapon("Weapon", 10, 10);
 

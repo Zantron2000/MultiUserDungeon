@@ -4,8 +4,13 @@ import java.util.HashMap;
 
 import model.inventory.Item;
 
+/**
+ * Represents a modifier for stats to change either attack or defense of a character.
+ * Keeps track of the turns it has remaining until it expires
+ * 
+ */
 public class Stat {
-    private static int BASE_TURN = 10;
+    private static int BASE_TURN = 10; // Base turn amount for a stat
 
     protected int attack; // The attack modifier stat
     protected int defense; // The defense modifier stat

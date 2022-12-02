@@ -1,8 +1,9 @@
 package model.map.concrete_tiles;
 
 import model.inventory.Item;
+import model.map.Tile;
 
-public class ChestTile extends MovableTile {
+public class ChestTile extends Tile {
     private static String DESCRIPTION = "A glowing chest. "; // The typical description for a chest
     private static String TILE_TYPE = "C"; // The tile representation of a chest tile
 
@@ -54,13 +55,7 @@ public class ChestTile extends MovableTile {
      */
     @Override
     public String getTileType() {
-        String characterString = super.getTileType();
-    
-        if(characterString.length() == 0) {
-            return ChestTile.TILE_TYPE;
-        } else {
-            return characterString;
-        }
+        return ChestTile.TILE_TYPE;
     }
 
     /**
@@ -68,6 +63,6 @@ public class ChestTile extends MovableTile {
      */
     @Override
     public String getDescription() {
-        return ChestTile.DESCRIPTION + super.getDescription();
+        return ChestTile.DESCRIPTION;
     }
 }

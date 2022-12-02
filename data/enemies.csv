@@ -1,0 +1,20 @@
+Type,Rarity,Name,Description,Attack,Defense,Health
+Nocturnal,Common,Rat,A rat searching for scraps of food,1,0,5
+Nocturnal,Common,Cultist,A deranged man looking for the next sacrifice,5,2,15
+Diurnal,Common,Giant Crab,The claws are sharp and reak of fish and salt,3,4,10
+Diurnal,Common,Tribal Warrior,His body is etched with the stories of his tribe,7,2,20
+Diurnal,Common,Acolyte,Their hands glow with a yellow light,3,3,15
+Nocturnal,Common,Devil Dog,A black body and red eyes that peer into your soul,8,0,10
+Diurnal,Common,Animated Armor,A glowing body of armor with a vengence,1,8,10
+Diurnal,Uncommon,Allosaurus,A predatory dinosaur of great size,7,5,30
+Diurnal,Uncommon,Awakened Tree,An ordinary tree given sentience and mobility,3,7,25
+Nocturnal,Uncommon,Bandit Captin,It takes a strong personality ruthless cunning and a silver tounge to keep a gang of bandits in line,8,4,30
+Nocturnal,Uncommon,Clut Fanatic,Fanatics are often part of a cult's leadership using charisma and dagma to influence and prey on those of weak will,4,5,30
+Diurnal,Uncommon,Air Elemental,A funneling cloud of whirling air with a vague semblance of a face,7,1,25
+Nocturnal,Uncommon,Assassin,Trained in the use of poison they're a remorseless killer,11,4,30
+Diurnal,Rare,Adult Green Dragon,They use misdirection and trickery to get an upper hand,10,7,40
+Nocturnal,Rare,Adult Black Dragon,The area is littered with centipedes and snakes along with the stench of death and decay,15,3,35
+Nocturnal,Epic,Ancient Black Dragon,The area is littered with centipedes and snakes along with the stench of death and decay,15,10,55
+Diurnal,Epic,Ancient Green Dragon,They use misdirection and trickery to get an upper hand,12,9,45
+Nocturnal,Legendary,Kraken,Living in dark depths they hunt for anything that moves,15,10,75
+Diurnal,Legendary,Zeus,King of Olympus,15,10,75

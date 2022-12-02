@@ -21,8 +21,8 @@ public abstract class NonPlayerCharacter extends Character {
      * @param attack the object's base attack
      * @param defence the object's base defense
      */
-    public NonPlayerCharacter(String name, String description, int health, int attack, int defense) {
-        super(name, description, health, attack, defense);
+    public NonPlayerCharacter(String name, String description, int attack, int defense, int health) {
+        super(name, description, attack, defense, health);
     }
 
     /**

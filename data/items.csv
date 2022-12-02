@@ -1,0 +1,49 @@
+Type,Name,Value,Rarity,Attack,Defense,Health
+Armor,A Single Glove,5,Common,0,1,0
+Armor,An Extra Shirt,10,Common,0,3,0
+Armor,Leather Armor,15,Common,0,5,0
+Armor,Padded Leather Armor,25,Common,0,6,0
+Armor,Chainmail Armor,50,Uncommon,0,7,0
+Armor,Aluminum Armor,100,Uncommon,0,8,0
+Armor,Iron Armor,200,Uncommon,0,10,0
+Armor,Gold Armor,250,Rare,0,13,0
+Armor,Diamond Armor,300,Rare,0,15,0
+Armor,Titanium Armor,500,Epic,0,20,0
+Armor,Enchanted Armor,750,Epic,0,25,0
+Armor,Dragonic Armor,1000,Legendary,0,30,0
+Weapon,A Stick,5,Common,1,0,0
+Weapon,Wooden Spear,10,Common,3,0,0
+Weapon,Wood Sword,15,Common,5,0,0
+Weapon,Mace,25,Common,6,0,0
+Weapon,Iron Sword,50,Uncommon,7,0,0
+Weapon,Great Sword,100,Uncommon,8,0,0
+Weapon,Double Edged Sword,200,Uncommon,10,0,0
+Weapon,Plasma Sword,250,Rare,13,0,0
+Weapon,Poisoned Dagger,300,Rare,15,0,0
+Weapon,Glass Sword,500,Epic,20,0,0
+Weapon,Flaming Sword,750,Epic,25,0,0
+Weapon,Sword of Legends,1000,Legendary,30,0,0
+Food,Grape,5,Common,0,0,3
+Food,Strawberry,10,Common,0,0,5
+Food,Energy Bar,15,Common,0,0,10
+Food,PopTart,25,Common,0,0,15
+Food,Lunchable,50,Uncommon,0,0,20
+Food,Egg,100,Uncommon,0,0,25
+Food,Chicken,200,Uncommon,0,0,30
+Food,Steak,250,Rare,0,0,35
+Food,Turkey Leg,300,Rare,0,0,40
+Food,Hamburger,500,Epic,0,0,45
+Food,Burritto,750,Epic,0,0,50
+Food,Necter of the Gods,1000,Legendary,0,0,75
+Buff,Weak Potion of Strength,5,Common,1,0,0
+Buff,Weak Potion of Endurence,5,Common,0,1,0
+Buff,Potion of Lions,15,Common,5,0,0
+Buff,Potion of Weasles,25,Common,4,1,0
+Buff,Potion of Balance,50,Uncommon,3,3,0
+Buff,Potion of Inspiration,100,Uncommon,5,3,0
+Buff,Potion of Strength,200,Uncommon,10,3,0
+Buff,Stone Skin Potion,200,Rare,10,5,0
+Buff,Bezerker Potion,300,Rare,15,0,0
+Buff,Iron Skin Potion,300,Epic,0,7,0
+Buff,True Potion of Strength,500,Epic,15,10,0
+Buff,Call of the Turtle Potion,7500,Legendary,25,10,0

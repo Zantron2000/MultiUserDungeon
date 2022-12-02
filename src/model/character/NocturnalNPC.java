@@ -10,8 +10,8 @@ public class NocturnalNPC extends NonPlayerCharacter {
      * @param attack the object's base attack
      * @param defence the object's base defense
      */
-    public NocturnalNPC(String name, String description, int health, int attack, int defence) {
-        super(name, description, health, attack, defence);
+    public NocturnalNPC(String name, String description, int attack, int defence, int health) {
+        super(name, description, attack, defence, health);
     }
 
     /**

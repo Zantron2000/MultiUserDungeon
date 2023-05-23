@@ -6,7 +6,7 @@ public class BaseStat implements Stat {
     private int attack;
     private int defense;
 
-    BaseStat(int attack, int defense) {
+    public BaseStat(int attack, int defense) {
         this.attack = attack;
         this.defense = defense;
     }

@@ -6,7 +6,7 @@ public class EquippedStat implements Stat {
     private int attack;
     private int defense;
 
-    EquippedStat(int attack, int defense) {
+    public EquippedStat(int attack, int defense) {
         this.attack = attack;
         this.defense = defense;
     }

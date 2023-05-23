@@ -8,7 +8,7 @@ public class TurnStat implements Stat {
     private int turns;
     private Stat nextStat;
 
-    TurnStat(int attack, int defense, int turns, Stat nextStat) {
+    public TurnStat(int attack, int defense, int turns, Stat nextStat) {
         this.attack = attack;
         this.defense = defense;
         this.turns = turns;
@@ -16,11 +16,11 @@ public class TurnStat implements Stat {
     }
 
     public int getAttack() {
-        return this.attack;
+        return this.attack + this.nextStat.getAttack();
     }
 
     public int getDefense() {
-        return this.defense;
+        return this.defense + this.nextStat.getDefense();
     }
 
     public Stat progressTurn() {

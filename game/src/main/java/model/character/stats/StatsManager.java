@@ -7,7 +7,7 @@ public interface StatsManager {
 
     public boolean isDead();
 
-    public void addBuffs(StatsRecord record);
+    public void addBuff(StatsRecord record);
 
     public int getDamage();
 

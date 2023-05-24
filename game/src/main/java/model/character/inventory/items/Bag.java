@@ -51,12 +51,56 @@ public class Bag implements Item {
 
     public void addItem(Item item, int index) {
         this.items[index] = item;
+        this.capacity++;
     }
 
     public Item removeItem(int index) {
+        if(!inBounds(index) || this.items[index] == null) {
+            return null;
+        }
+
         Item item = this.items[index];
         this.items[index] = null;
+        this.capacity--; 
 
         return item;
+    }
+
+    public String openInventory() {
+        String output = this.name + " " + this.capacity + "/" + this.maxCapacity + " capacity\n";
+
+        for(int i = 0; i < this.maxCapacity; i++) {
+            output += "\t\t" + (i + 1) + ". ";
+
+            if(this.items[i] == null) {
+                output += "None";
+            } else {
+                output += this.items[i].getDescription();
+            }
+
+            output += "\n";
+        }
+
+        return output;
+    }
+
+    public Item[] corpsify() {
+        Item[] items = new Item[this.capacity];
+        int counter = 0;
+
+        for(int i = 0; i < this.maxCapacity; i++) {
+            Item item = this.items[i];
+
+            if(item != null) {
+                items[counter] = item;
+                counter++;
+            }
+        }
+
+        return items;
+    }
+
+    private boolean inBounds(int pos) {
+        return 0 <= pos && pos < this.maxCapacity;
     }
 }

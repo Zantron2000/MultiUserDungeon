@@ -3,14 +3,18 @@ package model.character;
 import model.character.inventory.Inventory;
 import model.character.inventory.Item;
 import model.character.stats.StatsManager;
+import model.map.Coordinates;
+import model.map.room.tile.Occupier;
+import model.map.room.tile.Tile;
 
-public abstract class Character {
+public abstract class Character implements Occupier {
     private Inventory inventory;
     private StatsManager manager;
+    private Tile tile;
     private String name;
     private String description;
 
-    protected Character(Inventory inventory, StatsManager manager, String name, String description) {
+    protected Character(Inventory inventory, StatsManager manager, Tile tile, String name, String description) {
         this.inventory = inventory;
         this.manager = manager;
         this.name = name;
@@ -56,5 +60,22 @@ public abstract class Character {
 
     public String openInventory() {
         return this.inventory.openInventory();
+    }
+
+    public void moveOnto(Tile tile) {
+        this.tile = tile;
+    }
+    
+    public Coordinates getCoordinates() {
+        return this.tile.getCoordinates();
+    }
+
+    public void interact(Character character) {
+        int damage = character.getDamage();
+        this.manager.takeDamage(damage);
+    }
+
+    public String toString() {
+        return this.name + ": " + this.description;
     }
 }

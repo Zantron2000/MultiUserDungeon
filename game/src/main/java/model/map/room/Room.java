@@ -10,5 +10,6 @@ public class Room {
     public Room(Tile[][] layout) {
         this.height = layout.length;
         this.width = layout[0].length;
+        this.layout = layout;
     }
 }

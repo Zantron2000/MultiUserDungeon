@@ -35,4 +35,8 @@ public class Armor implements Item {
     public StatsRecord createRecord() {
         return new StatsRecord(ATTACK, defense, HEALTH, TURNS, EQUIPPABLE, ItemType.ARMOR);
     }
+
+    public String toString() {
+        return "(Armor) " + this.name + ": +" + this.defense + " defense"; 
+    }
 }

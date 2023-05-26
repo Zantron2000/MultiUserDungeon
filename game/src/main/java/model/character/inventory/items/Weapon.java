@@ -35,4 +35,8 @@ public class Weapon implements Item {
     public StatsRecord createRecord() {
         return new StatsRecord(attack, DEFENSE, HEALTH, TURNS, EQUIPPABLE, ItemType.WEAPON);
     }
+
+    public String toString() {
+        return "(Weapon) " + this.name + ": +" + this.attack + " attack"; 
+    }
 }

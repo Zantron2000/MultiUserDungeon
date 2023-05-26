@@ -50,8 +50,12 @@ public class Tile {
         this.terrain = null;
     }
 
+    public void removeOccupier() {
+        this.occupier = null;
+    }
+
     public Coordinates getCoordinates() {
-        return this.getCoordinates();
+        return this.coords;
     }
 
     private boolean isNull(Occupier occupier) {

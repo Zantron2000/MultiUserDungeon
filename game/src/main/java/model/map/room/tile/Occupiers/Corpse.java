@@ -3,12 +3,15 @@ package model.map.room.tile.Occupiers;
 import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Terrain;
+import model.map.room.tile.Tile;
 
 public class Corpse implements Terrain {
     private Item[] items;
+    private Tile tile;
 
-    public Corpse(Item[] items) {
+    public Corpse(Item[] items, Tile tile) {
         this.items = items;
+        this.tile = tile;
     }
 
     public void interact(Character character) {

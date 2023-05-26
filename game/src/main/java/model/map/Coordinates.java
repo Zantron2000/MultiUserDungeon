@@ -8,4 +8,9 @@ public class Coordinates {
         this.x = x;
         this.y = y;
     }
+
+    public int hashCode() {
+        String hash = "(" + this.x + ", " + this.y + ")";
+        return hash.hashCode();
+    }
 }

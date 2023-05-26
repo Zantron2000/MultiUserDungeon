@@ -79,6 +79,9 @@ public class MultiInventory implements Inventory {
         }
 
         if(record.isEquippable()) {
+            Item oldItem = this.equipped.get(record.getType());
+            this.addItem(oldItem);
+
             this.equipped.put(record.getType(), item);
         }
 
@@ -118,6 +121,12 @@ public class MultiInventory implements Inventory {
 
                 allItems.add(bag);
                 this.bags[i] = null;
+            }
+        }
+
+        for(Item item : equipped.values()) {
+            if(item != null) {
+                allItems.add(item);
             }
         }
 

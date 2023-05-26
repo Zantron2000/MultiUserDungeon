@@ -11,5 +11,7 @@ public interface StatsManager {
 
     public int getDamage();
 
+    public int getArmor();
+
     public void progressTurn();
 }

@@ -37,4 +37,8 @@ public class Buff implements Item {
     public StatsRecord createRecord() {
         return new StatsRecord(this.attack, this.defense, HEALTH, this.turns, EQUIPPABLE, ItemType.BUFF);
     }
+
+    public String toString() {
+        return "(Buff) " + this.name + ": +" + this.attack + " attack, +" + this.defense + " defense"; 
+    }
 }

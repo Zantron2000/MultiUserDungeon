@@ -7,6 +7,6 @@ import model.map.room.tile.Tile;
 
 public class DiurnalNPC extends NonPlayerCharacter {
     public DiurnalNPC(Inventory inventory, StatsManager manager, Tile tile, String name, String description) {
-        super(inventory, manager, tile, name, description, Cycle.DAY);
+        super(inventory, manager, tile, name, description, Cycle.DAY, 1.20, 0.90);
     }
 }

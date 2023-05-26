@@ -1,13 +1,16 @@
 package model.character;
 
+import controller.gameController.TurnObserver;
 import model.character.inventory.Inventory;
 import model.character.inventory.Item;
 import model.character.stats.StatsManager;
 import model.map.Coordinates;
 import model.map.room.tile.Occupier;
+import model.map.room.tile.Terrain;
 import model.map.room.tile.Tile;
+import model.map.room.tile.Occupiers.Corpse;
 
-public abstract class Character implements Occupier {
+public abstract class Character implements Occupier, TurnObserver {
     private Inventory inventory;
     private StatsManager manager;
     private Tile tile;
@@ -21,7 +24,7 @@ public abstract class Character implements Occupier {
         this.description = description;
     }
 
-    public void progressTurn() {
+    public void processTurn() {
         this.manager.progressTurn();
     }
 
@@ -29,7 +32,17 @@ public abstract class Character implements Occupier {
         return this.manager.getDamage();
     }
 
+    public int getArmor() {
+        return this.manager.getArmor();
+    }
+
     public void takeDamage(int damage) {
+        int totalDamage = damage - this.getArmor();
+
+        if(totalDamage <= 0) {
+            totalDamage = 1;
+        }
+
         this.manager.takeDamage(damage);
     }
 
@@ -73,9 +86,20 @@ public abstract class Character implements Occupier {
     public void interact(Character character) {
         int damage = character.getDamage();
         this.manager.takeDamage(damage);
+
+        if(this.isDead()) {
+            this.tile.removeOccupier();
+            Item[] items = this.inventory.corpsify();
+
+            if(items.length > 0) {
+                Terrain corpse = new Corpse(items, this.tile);
+
+                this.tile.replaceTerrain(corpse);
+            }
+        }
     }
 
     public String toString() {
-        return this.name + ": " + this.description;
+        return this.name + " - " + this.description + this.manager.toString();
     }
 }

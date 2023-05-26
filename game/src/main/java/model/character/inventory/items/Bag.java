@@ -75,7 +75,7 @@ public class Bag implements Item {
             if(this.items[i] == null) {
                 output += "None";
             } else {
-                output += this.items[i].getDescription();
+                output += this.items[i].toString();
             }
 
             output += "\n";
@@ -102,5 +102,9 @@ public class Bag implements Item {
 
     private boolean inBounds(int pos) {
         return 0 <= pos && pos < this.maxCapacity;
+    }
+
+    public String toString() {
+        return "(Bag) " + this.name + ": " + this.maxCapacity + " slots"; 
     }
 }

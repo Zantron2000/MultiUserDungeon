@@ -1,5 +1,6 @@
 package model.character.inventory.inventories;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import model.character.inventory.Inventory;
@@ -52,8 +53,12 @@ public class SingleInventory implements Inventory {
             StatsRecord record = item.createRecord();
 
             if(record != null && record.isEquippable()) {
+                Item oldItem = this.equipped.get(record.getType());
+
                 this.equipped.put(record.getType(), item);
                 this.destroyItem(bag, pos);
+
+                this.addItem(oldItem);
                 manager.addBuff(record);
             }
         }
@@ -78,16 +83,19 @@ public class SingleInventory implements Inventory {
     }
 
     public Item[] corpsify() {
-        Item[] items;
+        ArrayList<Item> allItems = new ArrayList<>();
 
-        if(this.item == null) {
-            items = new Item[1];
-            items[0] = this.item;
-            this.item = null;
-        } else {
-            items = new Item[0];
+        for(Item item : equipped.values()) {
+            if(item != null) {
+                allItems.add(item);
+            }
         }
 
-        return items;
+        if(this.item != null) {
+            allItems.add(this.item);
+        } 
+
+        Item[] items = new Item[allItems.size()];
+        return allItems.toArray(items);
     }
 }

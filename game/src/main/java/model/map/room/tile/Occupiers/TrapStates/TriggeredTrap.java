@@ -1,6 +1,5 @@
 package model.map.room.tile.Occupiers.TrapStates;
 
-import model.map.room.tile.Occupiers.Trap;
 import model.map.room.tile.Occupiers.TrapState;
 
 public class TriggeredTrap implements TrapState {

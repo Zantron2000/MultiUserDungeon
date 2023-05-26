@@ -37,7 +37,7 @@ public class SimpleStatsManager implements StatsManager {
         return damage;
     }
 
-    public void takeDamage(int damage) {
+    public int getArmor() {
         int armor = 0;
 
         for(Stat stat : this.equipped.values()) {
@@ -46,8 +46,10 @@ public class SimpleStatsManager implements StatsManager {
 
         armor += this.stats.getDefense();
 
-        damage = damage - armor > 0 ? damage - armor : 1;
-        
+        return armor;
+    }
+
+    public void takeDamage(int damage) {    
         this.health -= damage;
     }
 
@@ -66,5 +68,9 @@ public class SimpleStatsManager implements StatsManager {
             Stat stat = new EquippedStat(record.getAttack(), record.getDefense());
             equipped.put(record.getType(), stat);
         }
+    }
+
+    public String toString() {
+        return this.health + "/" + this.maxHealth + " health, " + this.getDamage() + " attack, " + this.getArmor() + " defense";
     }
 }

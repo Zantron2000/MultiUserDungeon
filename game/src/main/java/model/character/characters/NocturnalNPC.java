@@ -7,6 +7,6 @@ import model.map.room.tile.Tile;
 
 public class NocturnalNPC extends NonPlayerCharacter{
     public NocturnalNPC(Inventory inventory, StatsManager manager, Tile tile, String name, String description) {
-        super(inventory, manager, tile, name, description, Cycle.NIGHT);
+        super(inventory, manager, tile, name, description, Cycle.NIGHT, 1.20, 0.90);
     }
 }

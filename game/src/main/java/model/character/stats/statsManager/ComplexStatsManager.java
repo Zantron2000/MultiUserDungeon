@@ -38,7 +38,7 @@ public class ComplexStatsManager implements StatsManager {
         return damage;
     }
 
-    public void takeDamage(int damage) {
+    public int getArmor() {
         int armor = 0;
 
         for(Stat stat : this.equipped.values()) {
@@ -47,8 +47,10 @@ public class ComplexStatsManager implements StatsManager {
 
         armor += this.stats.getDefense();
 
-        damage = damage - armor > 0 ? damage - armor : 1;
-        
+        return armor;
+    }
+
+    public void takeDamage(int damage) {        
         this.health -= damage;
     }
 
@@ -70,5 +72,9 @@ public class ComplexStatsManager implements StatsManager {
             Stat stat = new TurnStat(record.getAttack(), record.getDefense(), record.getTurns(), this.stats);
             this.stats = stat;
         }
+    }
+
+    public String toString() {
+        return this.health + "/" + this.maxHealth + " health, " + this.getDamage() + " attack, " + this.getArmor() + " defense";
     }
 }

@@ -35,4 +35,8 @@ public class Food implements Item {
     public StatsRecord createRecord() {
         return new StatsRecord(ATTACK, DEFENSE, health, TURNS, EQUIPPABLE, ItemType.FOOD);
     }
+
+    public String toString() {
+        return "(Food) " + this.name + ": +" + this.health + " health"; 
+    }
 }

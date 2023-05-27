@@ -3,6 +3,7 @@ package model.map;
 import java.util.HashMap;
 
 import controller.gameController.TurnObserver;
+import controller.turnMapper.TurnGenerator;
 import model.map.room.Room;
 
 public class Map implements TurnObserver {
@@ -21,5 +22,9 @@ public class Map implements TurnObserver {
     public void processTurn() {
         this.time.processTurn();
         this.currentRoom.processTurn();
+    }
+
+    public void generateMoves(TurnGenerator generator) {
+        this.currentRoom.generateMoves(generator);
     }
 }

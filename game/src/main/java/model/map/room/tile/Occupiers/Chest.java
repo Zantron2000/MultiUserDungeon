@@ -1,5 +1,7 @@
 package model.map.room.tile.Occupiers;
 
+import controller.turnMapper.Direction;
+import controller.turnMapper.TurnGenerator;
 import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Occupier;
@@ -24,5 +26,9 @@ public class Chest implements Occupier {
         }
 
         return null;
+    }
+
+    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
+        generator.generateCommand(this, direction);
     }
 }

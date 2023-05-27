@@ -74,7 +74,18 @@ public class MultiInventory implements Inventory {
         StatsRecord record = item.createRecord();
 
         if(record == null) {
-            this.bags[bag].addItem(item, pos);
+            Bag newBag = (Bag) item;
+            int idx = this.smallestBagIdx(newBag);
+
+            if(idx < 0) {
+                this.bags[bag].addItem(item, pos);
+                return;
+            }
+
+            Bag oldBag = this.bags[idx];
+            oldBag.transferItems(newBag);
+            this.addItem(oldBag);
+            
             return;
         }
 
@@ -137,4 +148,21 @@ public class MultiInventory implements Inventory {
     private boolean inBounds(int bag) {
         return 0 <= bag && bag < NUM_BAGS;
     }
+
+    private int smallestBagIdx(Bag bag) {
+        int idx = -1;
+        int minValue = 0;
+
+        for(int i = 0; i < NUM_BAGS; i++) {
+            Bag equippedBag = this.bags[i];
+            int compare = equippedBag.compareTo(bag);
+
+            if(compare < minValue) {
+                idx = i;
+                minValue = compare;
+            }
+        }
+
+        return idx;
+    } 
 }

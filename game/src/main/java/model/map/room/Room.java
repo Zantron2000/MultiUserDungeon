@@ -3,6 +3,9 @@ package model.map.room;
 import java.util.ArrayList;
 
 import controller.gameController.TurnObserver;
+import controller.turnMapper.Direction;
+import controller.turnMapper.TurnGenerator;
+import model.map.Coordinates;
 import model.map.Cycle;
 import model.map.TimeObserver;
 import model.map.room.tile.Tile;
@@ -32,5 +35,31 @@ public class Room implements TurnObserver, TimeObserver {
         for(TimeObserver observer : this.timeObservers) {
             observer.changeTime(time);
         }
+    }
+
+    public void generateMoves(TurnGenerator generator) {
+        ArrayList<Coordinates> moveCoords = generator.getMoveCoordinates();
+        ArrayList<Direction> moveDirections = generator.getMoveDirections();
+
+        for(int i = 0; i < moveCoords.size(); i++) {
+            Coordinates moveCoord = moveCoords.get(i);
+            Direction moveDirection = moveDirections.get(i);
+            int row = moveCoord.getRow();
+            int col = moveCoord.getCol();
+
+            if(inBounds(moveCoord)) {
+                this.layout[row][col].acceptTurnGenerator(generator, moveDirection);
+            }
+        }
+    }
+
+    private boolean inBounds(Coordinates tileCoord) {
+        int row = tileCoord.getRow();
+        int col = tileCoord.getCol();
+
+        boolean validRow = row >= 0 && row < this.height;
+        boolean validCol = col >= 0 && col < this.width;
+
+        return validRow && validCol;
     }
 }

@@ -107,4 +107,17 @@ public class Bag implements Item {
     public String toString() {
         return "(Bag) " + this.name + ": " + this.maxCapacity + " slots"; 
     }
+
+    public int compareTo(Bag bag) {
+        return this.maxCapacity - bag.maxCapacity;
+    }
+
+    public void transferItems(Bag bag) {
+        int length = (this.maxCapacity > bag.maxCapacity) ? bag.maxCapacity : this.maxCapacity;
+
+        for(int i = 0; i < length; i++) {
+            Item item = this.removeItem(i);
+            bag.addItem(item);
+        }
+    }
 }

@@ -1,0 +1,51 @@
+RARITY,NAME,DESCRIPTION,GOLD,SIZE
+common,Small Pouch,A small bag for carrying essentials,10,3
+common,Leather Satchel,A basic satchel for holding belongings,15,3
+common,Cloth Bag,A simple cloth bag for storage,12,3
+common,Knapsack,A durable knapsack for carrying supplies,20,3
+common,Drawstring Bag,A convenient bag with a drawstring closure,18,3
+common,Hip Pack,A compact bag worn around the waist,14,3
+common,Shoulder Bag,A bag worn over the shoulder for easy access,16,3
+common,Belt Pouch,A small pouch that attaches to a belt,13,3
+common,Canvas Tote,A sturdy canvas tote for everyday use,17,3
+common,Travel Wallet,A compact wallet for keeping travel documents,11,3
+uncommon,Medium Backpack,A medium-sized backpack for travel or adventure,25,5
+uncommon,Hiker's Rucksack,A rugged rucksack designed for outdoor expeditions,30,5
+uncommon,Messenger Bag,A stylish bag with a crossbody strap,27,5
+uncommon,Explorer's Satchel,A satchel with multiple compartments for exploration,22,5
+uncommon,Daypack,A versatile daypack for various activities,24,5
+uncommon,Duffel Bag,A spacious bag for carrying gym or sports gear,28,5
+uncommon,Tactical Pack,A durable pack with modular attachments,26,5
+uncommon,Convertible Tote,A versatile tote bag that converts to a backpack,23,5
+uncommon,Weekender Bag,A large bag for short trips and weekend getaways,29,5
+uncommon,Laptop Briefcase,A professional briefcase with laptop compartment,21,5
+rare,Large Duffle,A large duffle bag for extended travel,40,7
+rare,Travel Organizer,A specialized organizer for travel accessories,45,7
+rare,Trekking Pack,A heavy-duty pack designed for long treks,37,7
+rare,Commuter Backpack,A commuter-friendly backpack with laptop compartment,43,7
+rare,Rolling Luggage,A wheeled suitcase for convenient travel,39,7
+rare,Camera Bag,A padded bag for safely carrying camera equipment,42,7
+rare,Expandable Trolley,A versatile trolley bag with expandable capacity,36,7
+rare,Gear Hauler,A rugged bag for carrying camping or outdoor gear,38,7
+rare,Business Attache,A professional briefcase with organizational features,41,7
+rare,Weekend Duffel,A stylish duffel bag for weekend trips,44,7
+epic,Expedition Pack,A heavy-duty pack for extreme expeditions,60,8
+epic,Professional Backpack,A feature-rich backpack for professionals,65,8
+epic,Adventure Duffel,A robust duffel bag for outdoor adventures,57,8
+epic,Tech Travel Case,A specialized case for organizing tech accessories,62,8
+epic,Mountaineer's Pack,A specialized pack for mountaineering expeditions,58,8
+epic,Garment Bag,A bag designed to keep garments wrinkle-free,63,8
+epic,Photography Backpack,A specialized backpack for photographers,59,8
+epic,Hiking Rucksack,A high-capacity rucksack for long hiking trips,61,8
+epic,Luxury Luggage,A premium luggage set for luxurious travel,64,8
+epic,Executive Briefcase,A luxurious briefcase for business executives,56,8
+legendary,Grand Travel Trunk,A grand trunk for opulent travel experiences,100,10
+legendary,Legendary Adventurer's Pack,A legendary pack for the most daring adventurers,110,10
+legendary,Masterwork Satchel,A masterfully crafted satchel with exquisite details,105,10
+legendary,Enchanted Bag of Holding,A magical bag that can hold an incredible amount,120,10
+legendary,Ancient Relic Case,A case designed to protect and display ancient relics,115,10
+legendary,Prestigious Attache,A prestigious briefcase exuding elegance and power,108,10
+legendary,Divine Artifact Bag,A bag crafted to store and protect divine artifacts,125,10
+legendary,Ultimate Explorer's Kit,An ultimate kit for exploration and discovery,112,10
+legendary,Celestial Traveler's Backpack,A backpack infused with celestial powers,118,10
+legendary,Everlasting Luggage Set,A set of everlasting luggage for eternal journeys,130,10

@@ -10,4 +10,6 @@ public interface Item {
     public int getValue();
 
     public StatsRecord createRecord();
+
+    public Item clone();
 }

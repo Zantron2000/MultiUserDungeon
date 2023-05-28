@@ -1,0 +1,101 @@
+TYPE,RARITY,NAME,DESCRIPTION,HEALTH,ATTACK,DEFENSE
+diurnal,common,Goblin,Small and mischievous creature,9,3,4
+nocturnal,common,Zombie,Decaying undead creature,5,1,2
+diurnal,common,Skeleton,Fearsome warrior raised from the dead,8,4,3
+nocturnal,common,Slime,Gooey and slimy creature,3,2,1
+diurnal,common,Orc,Brutish and aggressive humanoid,10,5,5
+nocturnal,common,Wolf,Fierce and cunning predator,7,3,2
+diurnal,common,Giant Rat,Vermin lurking in dark corners,4,2,1
+nocturnal,common,Bat,Nocturnal flying mammal,6,1,3
+diurnal,common,Kobold,Small reptilian humanoid,5,3,2
+diurnal,common,Spider,Eight-legged arachnid,7,2,3
+nocturnal,uncommon,Ghoul,Flesh-eating undead creature,12,6,5
+diurnal,uncommon,Wraith,Ethereal and vengeful spirit,11,7,4
+nocturnal,uncommon,Harpy,Half-bird half-human creature,14,8,6
+diurnal,uncommon,Werewolf,Humanoid with the ability to transform into a wolf,9,5,3
+nocturnal,uncommon,Gargoyle,Stone creature brought to life,13,7,5
+diurnal,uncommon,Gnoll,Hyena-like humanoid,10,6,4
+nocturnal,uncommon,Vampire,Immortal creature that feeds on blood,15,9,7
+diurnal,uncommon,Dwarf,Short and sturdy humanoid,12,7,6
+nocturnal,uncommon,Shadow,Living darkness with malevolent intent,11,6,4
+diurnal,uncommon,Centaur,Half-human half-horse creature,14,8,6
+nocturnal,rare,Troll,Giant creature with regenerative abilities,18,10,9
+diurnal,rare,Minotaur,Half-human half-bull creature,17,9,8
+nocturnal,rare,Manticore,Lion-bodied creature with a scorpion tail,20,12,10
+diurnal,rare,Griffon,Legendary creature with the body of a lion and the head of an eagle,15,10,8
+nocturnal,rare,Demon,Fiery creature from the depths of the underworld,19,11,9
+diurnal,rare,Phoenix,Mythical bird reborn from its own ashes,16,9,7
+nocturnal,rare,Dragon,Dreaded fire-breathing creature of immense power,20,12,10
+diurnal,rare,Cyclops,Giant humanoid with a single eye,18,11,9
+nocturnal,rare,Gorgon,Snake-haired creature with the power to turn beings to stone,19,10,8
+diurnal,rare,Hippogriff,Majestic creature with the head of a hawk and the body of a horse,17,10,8
+nocturnal,epic,Hydra,Monstrous serpentine creature with regenerating heads,30,14,12
+diurnal,epic,Giant,Enormous humanoid creature,28,13,11
+nocturnal,epic,Behemoth,Colossal creature with immense strength,32,15,13
+diurnal,epic,Kraken,Gigantic sea monster with tentacles,25,12,10
+nocturnal,epic,Lich,Undead spellcaster with incredible magical power,31,14,12
+diurnal,epic,Sphinx,Mysterious creature with the head of a human and the body of a lion,27,13,11
+nocturnal,epic,Djinn,Powerful genie with the ability to grant wishes,30,14,12
+diurnal,epic,Centipede,Giant arthropod with numerous legs and venomous bite,26,12,10
+nocturnal,epic,Giant Scorpion,Enormous arachnid with a venomous stinger,29,13,11
+diurnal,epic,Yeti,Legendary creature of the snowy mountains,28,13,11
+nocturnal,legendary,Balrog,Demonic creature wreathed in flames,50,20,17
+diurnal,legendary,Kraken,Legendary sea monster capable of sinking ships,45,18,15
+nocturnal,legendary,Dragon,Monstrous creature of ancient legend,55,22,19
+diurnal,legendary,Phoenix,Mythical bird with the power of rebirth,40,17,14
+nocturnal,legendary,Titan,Gigantic deity-like being of immense power,50,20,17
+diurnal,legendary,Chimera,Monstrous creature with the body parts of multiple animals,45,18,15
+nocturnal,legendary,Gorgon,Powerful creature with the ability to turn beings to stone,54,22,19
+diurnal,legendary,Leviathan,Huge sea monster of unparalleled strength,48,19,16
+nocturnal,legendary,Kraken,Giant sea creature capable of causing massive destruction,52,21,18
+diurnal,legendary,Griffin,Legendary creature with the head of an eagle and the body of a lion,47,19,16
+diurnal,common,Goblin,Small and mischievous creature,7,3,1
+nocturnal,common,Zombie,Decaying undead creature,5,2,2
+diurnal,common,Skeleton,Fearsome warrior raised from the dead,8,4,2
+nocturnal,common,Slime,Gooey and slimy creature,3,1,1
+diurnal,common,Orc,Brutish and aggressive humanoid,10,5,4
+nocturnal,common,Wolf,Fierce and cunning predator,7,3,1
+diurnal,common,Giant Rat,Vermin lurking in dark corners,4,2,1
+nocturnal,common,Bat,Nocturnal flying mammal,6,1,3
+diurnal,common,Kobold,Small reptilian humanoid,5,3,2
+diurnal,common,Spider,Eight-legged arachnid,7,2,4
+nocturnal,uncommon,Ghoul,Flesh-eating undead creature,11,6,4
+diurnal,uncommon,Wraith,Ethereal and vengeful spirit,10,7,3
+nocturnal,uncommon,Harpy,Half-bird half-human creature,13,8,6
+diurnal,uncommon,Werewolf,Humanoid with the ability to transform into a wolf,9,5,2
+nocturnal,uncommon,Gargoyle,Stone creature brought to life,12,7,4
+diurnal,uncommon,Gnoll,Hyena-like humanoid,10,6,3
+nocturnal,uncommon,Vampire,Immortal creature that feeds on blood,15,9,6
+diurnal,uncommon,Dwarf,Short and sturdy humanoid,12,7,6
+nocturnal,uncommon,Shadow,Living darkness with malevolent intent,11,6,3
+diurnal,uncommon,Centaur,Half-human half-horse creature,14,8,5
+nocturnal,rare,Troll,Giant creature with regenerative abilities,17,10,10
+diurnal,rare,Minotaur,Half-human half-bull creature,16,9,7
+nocturnal,rare,Manticore,Lion-bodied creature with a scorpion tail,19,11,9
+diurnal,rare,Griffon,Legendary creature with the body of a lion and the head of an eagle,14,10,7
+nocturnal,rare,Demon,Fiery creature from the depths of the underworld,18,11,9
+diurnal,rare,Phoenix,Mythical bird reborn from its own ashes,15,9,7
+nocturnal,rare,Dragon,Dreaded fire-breathing creature of immense power,20,12,10
+diurnal,rare,Cyclops,Giant humanoid with a single eye,18,11,10
+nocturnal,rare,Gorgon,Snake-haired creature with the power to turn beings to stone,19,10,9
+diurnal,rare,Hippogriff,Majestic creature with the head of a hawk and the body of a horse,17,10,9
+nocturnal,epic,Hydra,Monstrous serpentine creature with regenerating heads,29,14,13
+diurnal,epic,Giant,Enormous humanoid creature,27,13,11
+nocturnal,epic,Behemoth,Colossal creature with immense strength,32,15,14
+diurnal,epic,Kraken,Gigantic sea monster with tentacles,24,12,10
+nocturnal,epic,Lich,Undead spellcaster with incredible magical power,31,14,12
+diurnal,epic,Sphinx,Mysterious creature with the head of a human and the body of a lion,26,13,11
+nocturnal,epic,Djinn,Powerful genie with the ability to grant wishes,29,14,12
+diurnal,epic,Centipede,Giant arthropod with numerous legs and venomous bite,25,12,10
+nocturnal,epic,Giant Scorpion,Enormous arachnid with a venomous stinger,28,13,11
+diurnal,epic,Yeti,Legendary creature of the snowy mountains,27,13,11
+nocturnal,legendary,Balrog,Demonic creature wreathed in flames,50,20,18
+diurnal,legendary,Kraken,Legendary sea monster capable of sinking ships,44,18,16
+nocturnal,legendary,Dragon,Monstrous creature of ancient legend,54,22,20
+diurnal,legendary,Phoenix,Mythical bird with the power of rebirth,39,17,15
+nocturnal,legendary,Titan,Gigantic deity-like being of immense power,49,20,18
+diurnal,legendary,Chimera,Monstrous creature with the body parts of multiple animals,44,18,16
+nocturnal,legendary,Gorgon,Powerful creature with the ability to turn beings to stone,53,22,20
+diurnal,legendary,Leviathan,Huge sea monster of unparalleled strength,47,19,17
+nocturnal,legendary,Kraken,Giant sea creature capable of causing massive destruction,51,21,19
+diurnal,legendary,Griffin,Legendary creature with the head of an eagle and the body of a lion,46,19,17

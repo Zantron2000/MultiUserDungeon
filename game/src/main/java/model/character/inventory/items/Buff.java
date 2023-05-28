@@ -38,6 +38,10 @@ public class Buff implements Item {
         return new StatsRecord(this.attack, this.defense, HEALTH, this.turns, EQUIPPABLE, ItemType.BUFF);
     }
 
+    public Item clone() {
+        return new Buff(this.name, this.description, this.value, this.attack, this.defense, this.turns);
+    }
+
     public String toString() {
         return "(Buff) " + this.name + ": +" + this.attack + " attack, +" + this.defense + " defense"; 
     }

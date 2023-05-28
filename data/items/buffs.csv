@@ -1,0 +1,35 @@
+RARITY,NAME,DESCRIPTION,GOLD,ATTACK,DEFENSE
+common,Health Potion,Restores vitality and heals wounds,20,0,3
+common,Strength Elixir,Enhances physical power and boosts attack,30,2,0
+common,Protection Scroll,Increases defensive capabilities,25,0,4
+common,Agility Tonic,Boosts speed and agility for swift movements,15,1,2
+common,Resistance Salve,Provides resistance against elemental damage,40,0,2
+common,Focus Crystal,Sharpens concentration and improves accuracy,10,3,0
+common,Energy Drink,Replenishes energy and increases stamina,35,0,1
+common,Fortitude Potion,Enhances endurance and grants extra health,30,0,4
+common,Vigor Elixir,Revitalizes and boosts overall physical performance,20,2,1
+common,Guardian Amulet,Provides a protective aura and improves defense,25,0,5
+uncommon,Mana Potion,Restores magical energy for spellcasting,60,0,2
+uncommon,Blaze Scroll,Unleashes a fiery blast to engulf enemies,70,6,0
+uncommon,Shadow Essence,Allows temporary invisibility and stealth,65,0,3
+uncommon,Frost Shard,Chills enemies and slows down their movements,55,3,1
+uncommon,Enchanted Feather,Grants the ability to levitate and fly briefly,50,2,1
+uncommon,Swift Potion,Enhances speed and grants quick reflexes,45,1,1
+uncommon,Elemental Charm,Amplifies elemental powers and spell damage,70,4,0
+uncommon,Deflection Crystal,Creates a protective barrier against incoming attacks,60,0,5
+uncommon,Phantom Elixir,Allows temporary intangibility and ethereal movement,55,0,4
+uncommon,Willpower Tonic,Boosts mental focus and resistance to magic,65,0,3
+rare,Arcane Elixir,Unleashes a surge of magical power and increases spell potency,100,0,3
+rare,Holy Water,Purifies and banishes dark forces,120,10,0
+rare,Storm Orb,Summons lightning bolts to strike enemies,110,0,5
+rare,Divine Shield,Creates an impenetrable barrier against all harm,130,0,8
+rare,Celestial Feather,Grants divine flight and angelic protection,120,0,7
+epic,Elixir of Eternal Life,Grants immortality and eternal youth,300,0,5
+epic,Forbidden Grimoire,Unleashes forbidden spells with immense power,350,14,0
+epic,Dragon Scale Armor,Armor crafted from the scales of a mighty dragon,320,0,11
+epic,Soulstone,Stores captured souls to enhance magical abilities,400,0,10
+epic,Astral Cloak,Wraps the wearer in the fabric of the cosmos,380,0,9
+legendary,Infinity Elixir,Unlocks limitless potential and transcends mortal limitations,600,0,8
+legendary,Essence of Time,Ancient artifact that controls the flow of time,700,20,0
+legendary,Adamantine Shield,A shield forged from the unbreakable metal of gods,650,0,18
+legendary,Tome of Wisdom,Contains the ancient knowledge of the ages,750,0,15

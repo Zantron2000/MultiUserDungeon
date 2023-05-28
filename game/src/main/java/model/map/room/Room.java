@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import controller.gameController.TurnObserver;
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.map.Coordinates;
 import model.map.Cycle;
 import model.map.TimeObserver;
@@ -37,7 +37,7 @@ public class Room implements TurnObserver, TimeObserver {
         }
     }
 
-    public void generateMoves(TurnGenerator generator) {
+    public void generateMoves(TurnMapper generator) {
         ArrayList<Coordinates> moveCoords = generator.getMoveCoordinates();
         ArrayList<Direction> moveDirections = generator.getMoveDirections();
 

@@ -1,0 +1,42 @@
+RARITY,NAME,DESCRIPTION,GOLD,ATTACK
+common,Rusty Sword,An old and worn-out sword,25,3
+common,Iron Dagger,A simple iron dagger,15,2
+common,Wooden Staff,A staff made of sturdy wood,10,1
+common,Stone Axe,A basic axe made of stone,35,4
+common,Leather Gloves,Simple gloves made of leather,20,1
+common,Short Bow,A small bow for beginners,30,2
+common,Wooden Shield,A basic shield made of wood,40,1
+common,Copper Ring,A plain copper ring,5,0
+common,Iron Helmet,A basic iron helmet,45,0
+common,Cloth Robe,A lightweight robe made of cloth,30,0
+uncommon,Steel Sword,A well-crafted sword made of steel,70,6
+uncommon,Assassin's Dagger,A sharp and deadly dagger,60,5
+uncommon,Ember Staff,A staff infused with fiery energy,55,4
+uncommon,Battle Axe,A sturdy and reliable battle axe,80,7
+uncommon,Chainmail Gauntlets,Gauntlets made of interlocking metal rings,65,3
+uncommon,Longbow,A long-range bow with increased accuracy,75,4
+uncommon,Reinforced Shield,A sturdy shield reinforced with metal,90,3
+uncommon,Silver Ring,A silver ring with intricate engravings,50,1
+uncommon,Steel Helmet,A durable helmet made of steel,95,1
+uncommon,Leather Armor,A flexible and protective leather armor,80,0
+rare,Mystic Blade,A rare blade imbued with mysterious powers,120,10
+rare,Venom Dagger,A deadly dagger coated in potent venom,110,9
+rare,Arcane Staff,A staff that harnesses arcane energies,105,8
+rare,War Hammer,A massive hammer for devastating blows,130,11
+rare,Enchanted Gloves,Gloves infused with enchantments,100,7
+rare,Composite Bow,A powerful bow with reinforced limbs,125,8
+rare,Enchanted Shield,A magical shield with enhanced defenses,140,7
+rare,Amethyst Ring,A ring adorned with a gleaming amethyst gem,95,4
+rare,Plate Helmet,A heavy helmet offering superior protection,145,4
+rare,Scalemail Armor,Durable armor made of overlapping metal scales,130,2
+epic,Blade of the Abyss,A legendary blade forged in the depths of the abyss,300,15
+epic,Shadowstrike Dagger,A dagger that strikes with the shadows' might,280,14
+epic,Aether Staff,A staff capable of channeling the power of the aether,270,13
+epic,Doombringer Axe,An axe that brings doom upon its enemies,310,16
+epic,Gauntlets of the Titan,Gauntlets that grant immense strength,260,12
+epic,Elven Longbow,A masterfully crafted longbow of elven design,290,13
+epic,Tower Shield of Kings,A towering shield fit for a legendary king,320,12
+epic,Opal Ring,A ring adorned with a magnificent opal gem,250,9
+epic,Helm of the Conqueror,A helm worn by conquerors of old,325,9
+epic,Dragonhide Armor,Armor crafted from the hides of mighty dragons,300,6
+legendary,Sword of Excalibur,The legendary sword of King Arthur,600,30

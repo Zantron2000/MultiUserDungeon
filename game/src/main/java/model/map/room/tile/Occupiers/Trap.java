@@ -1,7 +1,7 @@
 package model.map.room.tile.Occupiers;
 
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.map.room.tile.Terrain;
 import model.map.room.tile.Occupiers.TrapStates.HiddenTrap;
@@ -37,7 +37,7 @@ public class Trap implements Terrain {
         }
     }
 
-    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
+    public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
         if(this.phase.isSeen() && !this.phase.isDisarmed()) {
             generator.generateCommand(this, direction);
         }

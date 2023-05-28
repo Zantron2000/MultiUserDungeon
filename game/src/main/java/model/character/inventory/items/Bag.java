@@ -112,6 +112,10 @@ public class Bag implements Item {
         return this.maxCapacity - bag.maxCapacity;
     }
 
+    public Item clone() {
+        return new Bag(this.name, this.description, this.value, this.maxCapacity);
+    }
+
     public void transferItems(Bag bag) {
         int length = (this.maxCapacity > bag.maxCapacity) ? bag.maxCapacity : this.maxCapacity;
 

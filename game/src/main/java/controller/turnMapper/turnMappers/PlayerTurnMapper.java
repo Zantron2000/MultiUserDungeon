@@ -1,11 +1,11 @@
-package controller.turnMapper.turnGenerators;
+package controller.turnMapper.turnMappers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import controller.turnMapper.Command;
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import controller.turnMapper.commands.InteractCommand;
 import controller.turnMapper.commands.MoveCommand;
 import model.character.Character;
@@ -16,12 +16,12 @@ import model.map.room.tile.Occupiers.Corpse;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
-public class PlayerGenerator implements TurnGenerator {
+public class PlayerTurnMapper implements TurnMapper {
     private HashMap<String, Command> commands;
     private Character interacter;
     private Coordinates coords;
 
-    public PlayerGenerator(Character character) {
+    public PlayerTurnMapper(Character character) {
         this.interacter = character;
         this.coords = character.getCoordinates();
         this.commands = new HashMap<>();
@@ -51,13 +51,11 @@ public class PlayerGenerator implements TurnGenerator {
         return directions;
     }
 
-    public void generateCommand(Obstacle obstacle, Direction direction) {
-
-    }
+    public void generateCommand(Obstacle obstacle, Direction direction) {}
 
     public void generateCommand(Character enemy, Direction direction) {
         String key = "interact " + direction.toString();
-        Command value = new InteractCommand(this.interacter, enemy, "Character", direction.toString());
+        Command value = new InteractCommand(this.interacter, enemy, "Enemy", direction.toString());
 
         commands.put(key, value);
     }

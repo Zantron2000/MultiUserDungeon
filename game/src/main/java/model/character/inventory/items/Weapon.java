@@ -36,6 +36,10 @@ public class Weapon implements Item {
         return new StatsRecord(attack, DEFENSE, HEALTH, TURNS, EQUIPPABLE, ItemType.WEAPON);
     }
 
+    public Item clone() {
+        return new Weapon(this.name, this.description, this.value, this.attack);
+    }
+
     public String toString() {
         return "(Weapon) " + this.name + ": +" + this.attack + " attack"; 
     }

@@ -1,7 +1,7 @@
 package model.map.room.tile.Occupiers;
 
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.map.room.tile.Occupier;
 
@@ -16,7 +16,7 @@ public class Obstacle implements Occupier {
         return;
     }
 
-    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
+    public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
         generator.generateCommand(this, direction);
     }
 }

@@ -2,7 +2,7 @@ package model.character;
 
 import controller.gameController.TurnObserver;
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.character.inventory.Inventory;
 import model.character.inventory.Item;
 import model.character.stats.StatsManager;
@@ -101,7 +101,7 @@ public abstract class Character implements Occupier, TurnObserver {
         }
     }
 
-    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
+    public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
         generator.generateCommand(this, direction);
     }
 

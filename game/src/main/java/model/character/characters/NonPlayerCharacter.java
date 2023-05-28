@@ -2,12 +2,13 @@ package model.character.characters;
 
 import model.character.Character;
 import model.character.inventory.Inventory;
+import model.character.inventory.Item;
 import model.character.stats.StatsManager;
 import model.map.Cycle;
 import model.map.TimeObserver;
 import model.map.room.tile.Tile;
 
-public class NonPlayerCharacter extends Character implements TimeObserver {
+public abstract class NonPlayerCharacter extends Character implements TimeObserver {
     private Cycle cycle;
     private boolean boosted;
     private double buff;

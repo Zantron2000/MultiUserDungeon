@@ -10,7 +10,7 @@ import model.map.room.tile.Occupiers.Corpse;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
-public interface TurnGenerator {
+public interface TurnMapper {
     public ArrayList<Coordinates> getMoveCoordinates();
 
     public ArrayList<Direction> getMoveDirections();

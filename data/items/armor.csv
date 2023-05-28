@@ -1,0 +1,47 @@
+RARITY,NAME,DESCRIPTION,GOLD,DEFENSE
+common,Leather Helmet,Protective headgear made from stitched leather,15,2
+common,Chainmail Chestplate,Durable chest armor made from interlocking metal rings,30,4
+common,Steel Gauntlets,Sturdy steel gloves to protect the hands,10,1
+common,Iron Boots,Heavy iron boots for added foot protection,12,1
+common,Bronze Shield,A solid bronze shield for blocking incoming attacks,20,3
+common,Rusty Armor,Worn and rusty armor,15,2
+common,Wooden Shield,A shield made from sturdy wood,12,2
+common,Cotton Tunic,A lightweight tunic made from soft cotton,10,1
+common,Amber Amulet,An amulet adorned with a beautiful amber gemstone,10,1
+common,Stone Ring,A ring made from a smooth stone,8,0
+uncommon,Silver Helmet,Shiny silver helmet with intricate engravings,60,6
+uncommon,Steel Platebody,Strong steel platebody for maximum protection,80,9
+uncommon,Mithril Gauntlets,Lightweight mithril gauntlets for improved dexterity,50,4
+uncommon,Enchanted Boots,Boots infused with magical properties,40,3
+uncommon,Obsidian Shield,A sturdy shield made from obsidian,55,6
+uncommon,Frost Armor,Armor imbued with the power of frost,70,8
+uncommon,Silk Robe,A finely crafted robe made from luxurious silk,60,4
+uncommon,Jade Bracelet,A bracelet adorned with a mesmerizing jade stone,45,2
+uncommon,Golden Crown,A crown made from shimmering gold,55,1
+rare,Diamond Helmet,A dazzling helmet embedded with a sparkling diamond,100,12
+rare,Dragon Scale Armor,Armor crafted from the scales of a mighty dragon,120,15
+rare,Adamantine Gauntlets,Gauntlets made from the legendary metal,90,10
+rare,Flameplate,Armor imbued with the power of fire,110,14
+rare,Ancient Shield,A shield passed down from ancient warriors,130,16
+rare,Icebound Robe,A robe that emanates an icy aura,100,11
+rare,Ruby Amulet,An amulet adorned with a radiant ruby gemstone,95,9
+rare,Golden Greaves,Heavy greaves made from pure gold,120,12
+rare,Emerald Crown,A crown adorned with a brilliant emerald,110,10
+epic,Celestial Crown,A crown said to grant the wearer divine powers,300,20
+epic,Stormplate Armor,Ancient armor said to harness the power of thunderstorms,350,25
+epic,Ethereal Cloak,A shimmering cloak that grants invisibility,250,18
+epic,Soulforged Armor,Armor infused with the souls of fallen warriors,320,23
+epic,Void Shield,A shield that can repel the forces of darkness,400,27
+epic,Astral Robe,A robe woven from the fabric of the cosmos,300,20
+epic,Sapphire Pendant,A pendant adorned with a mesmerizing sapphire gemstone,280,18
+epic,Dragonbone Greaves,Greaves crafted from the bones of a mighty dragon,350,24
+epic,Crimson Crown,A crown that radiates with a crimson aura,320,22
+legendary,Phoenix Helm,A helm that grants the ability to rise from the ashes,600,30
+legendary,Shadowforged Plate,Armor forged from the essence of darkness,700,35
+legendary,Eclipse Gauntlets,Gauntlets that channel the power of a solar eclipse,550,28
+legendary,Voidplate,Armor that harnesses the void's power,650,33
+legendary,Infinity Shield,A shield said to hold infinite defensive capabilities,750,38
+legendary,Cosmic Robe,A robe that allows the wearer to transcend the mortal realm,600,30
+legendary,Diamond Amulet,An amulet adorned with a brilliant diamond,700,35
+legendary,Starfire Greaves,Greaves infused with the energy of a thousand stars,650,32
+legendary,Aurelian Crown,A crown that radiates with a golden aura,700,34

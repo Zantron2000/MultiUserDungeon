@@ -36,6 +36,10 @@ public class Food implements Item {
         return new StatsRecord(ATTACK, DEFENSE, health, TURNS, EQUIPPABLE, ItemType.FOOD);
     }
 
+    public Item clone() {
+        return new Food(this.name, this.description, this.value, this.health);
+    }
+
     public String toString() {
         return "(Food) " + this.name + ": +" + this.health + " health"; 
     }

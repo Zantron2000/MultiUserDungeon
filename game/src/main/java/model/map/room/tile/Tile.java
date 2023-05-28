@@ -2,7 +2,7 @@ package model.map.room.tile;
 
 import controller.turnMapper.Direction;
 import controller.turnMapper.TurnElement;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.map.Coordinates;
 
@@ -57,10 +57,14 @@ public class Tile implements TurnElement {
         return occupier == null;
     }
 
-    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
-        if(this.occupier != null) {
+    public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
+        if(direction == Direction.CURRENT) {
+            if(!this.isNull(this.terrain)) {
+                this.terrain.acceptTurnGenerator(generator, direction);
+            }
+        } else if(!this.isNull(this.occupier)) {
             this.occupier.acceptTurnGenerator(generator, direction);
-        } else if(this.terrain != null) {
+        } else if(!this.isNull(this.terrain)) {
             this.terrain.acceptTurnGenerator(generator, direction);
             generator.generateCommand(this, direction);
         } else {

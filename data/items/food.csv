@@ -1,0 +1,34 @@
+RARITY,NAME,DESCRIPTION,GOLD,HEALTH
+common,Apple,Delicious and refreshing fruit,10,2
+common,Bread,Freshly baked loaf of bread,15,3
+common,Cheese,Wedges of flavorful cheese,12,2
+common,Carrot,Crisp and nutritious root vegetable,8,1
+common,Mushroom,A savory fungus for culinary delights,10,2
+common,Potato,Versatile tuber for various dishes,10,2
+common,Honey,Sweet golden nectar from bees,15,2
+common,Nuts,A mix of crunchy and nutritious nuts,12,2
+common,Egg,Fresh and protein-packed chicken egg,10,2
+common,Milk,Cold and creamy dairy beverage,15,2
+uncommon,Sausage,Flavorful and juicy sausage link,60,8
+uncommon,Pancake,Fluffy and golden-brown breakfast delight,70,10
+uncommon,Soup,Warm and comforting bowl of soup,50,7
+uncommon,Salad,Fresh mix of greens and vegetables,40,6
+uncommon,Smoothie,Refreshing blended fruit beverage,55,8
+uncommon,Stew,Hearty and flavorful meat stew,65,9
+uncommon,Pizza,Tasty and cheesy Italian classic,60,8
+uncommon,Wrap,Healthy and delicious wrap filled with ingredients,45,6
+uncommon,Pie,Flaky and fruity dessert pie,55,7
+rare,Steak,Juicy and tender cut of grilled steak,100,15
+rare,Sushi,Artfully prepared bite-sized sushi rolls,120,18
+rare,Curry,Aromatic and flavorful spicy curry dish,90,13
+rare,Lobster,Exquisite seafood delicacy,110,16
+rare,Risotto,Creamy and rich rice dish with various ingredients,130,19
+epic,Chocolate Cake,Decadent and indulgent chocolate cake,300,35
+epic,Truffle,Exquisite and rare gourmet truffle,350,40
+epic,Lasagna,Layers of pasta, meat, and cheese in a hearty dish,250,30
+epic,Croissant,Buttery and flaky French pastry,320,37
+epic,Gelato,Smooth and creamy Italian ice cream,400,45
+legendary,Caviar,Delicate and luxurious fish roe,600,70
+legendary,Prime Rib,Exceptionally tender and flavorful prime rib,700,80
+legendary,Black Truffle,The rarest and most prized gourmet truffle,550,65
+legendary,Gold Leaf Dessert,A dessert adorned with edible gold leaf,650,75

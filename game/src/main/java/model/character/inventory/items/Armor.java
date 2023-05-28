@@ -36,6 +36,10 @@ public class Armor implements Item {
         return new StatsRecord(ATTACK, defense, HEALTH, TURNS, EQUIPPABLE, ItemType.ARMOR);
     }
 
+    public Item clone() {
+        return new Armor(this.name, this.description, this.value, this.defense);
+    }
+
     public String toString() {
         return "(Armor) " + this.name + ": +" + this.defense + " defense"; 
     }

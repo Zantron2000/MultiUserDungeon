@@ -17,6 +17,16 @@ public class Coordinates {
         return this.col;
     }
 
+    public boolean equals(Object other) {
+        if(other instanceof Coordinates) {
+            Coordinates otherCoords = (Coordinates) other;
+
+            return otherCoords.row == this.row && otherCoords.col == this.col;
+        }
+
+        return false;
+    }
+
     public int hashCode() {
         String hash = "(" + this.row + ", " + this.col + ")";
         return hash.hashCode();

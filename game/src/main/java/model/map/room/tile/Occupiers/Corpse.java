@@ -1,8 +1,7 @@
 package model.map.room.tile.Occupiers;
 
 import controller.turnMapper.Direction;
-import controller.turnMapper.TurnElement;
-import controller.turnMapper.TurnGenerator;
+import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Terrain;
@@ -25,7 +24,7 @@ public class Corpse implements Terrain {
         // TODO implement the interaction interface here
     }
 
-    public void acceptTurnGenerator(TurnGenerator generator, Direction direction) {
+    public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
         generator.generateCommand(this, direction);
     }
 }

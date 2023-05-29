@@ -14,4 +14,6 @@ public interface StatsManager {
     public int getArmor();
 
     public void progressTurn();
+
+    public String toString();
 }

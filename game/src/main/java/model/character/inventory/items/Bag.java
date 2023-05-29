@@ -44,6 +44,7 @@ public class Bag implements Item {
         for(int i = 0; i < this.maxCapacity; i++) {
             if(this.items[i] == null) {
                 this.items[i] = item;
+                this.capacity++;
                 break;
             }
         }
@@ -121,7 +122,10 @@ public class Bag implements Item {
 
         for(int i = 0; i < length; i++) {
             Item item = this.removeItem(i);
-            bag.addItem(item);
+
+            if(item != null) {
+                bag.addItem(item);
+            }
         }
     }
 }

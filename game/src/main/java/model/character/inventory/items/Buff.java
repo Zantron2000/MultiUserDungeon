@@ -43,6 +43,6 @@ public class Buff implements Item {
     }
 
     public String toString() {
-        return "(Buff) " + this.name + ": +" + this.attack + " attack, +" + this.defense + " defense"; 
+        return "(Buff) " + this.name + ": +" + this.attack + " attack, +" + this.defense + " defense for " + this.turns + " turns"; 
     }
 }

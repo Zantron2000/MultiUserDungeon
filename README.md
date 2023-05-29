@@ -6,3 +6,4 @@
 4. Give corpse and chest gold to take
 5. Fix enemy generator to give enemy an item and / or gold
 7. Give room generate actual obstacle descriptions
+8. Fix buff data to include turns

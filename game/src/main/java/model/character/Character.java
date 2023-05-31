@@ -87,14 +87,14 @@ public abstract class Character implements Occupier, TurnObserver {
 
     public void interact(Character character) {
         int damage = character.getDamage();
-        this.manager.takeDamage(damage);
+        this.takeDamage(damage);
 
         if(this.isDead()) {
             this.tile.removeOccupier();
             Item[] items = this.inventory.corpsify();
 
             if(items.length > 0) {
-                Terrain corpse = new Corpse(items, this.tile);
+                Terrain corpse = new Corpse(items, this.tile, this.inventory.emptyGold());
 
                 this.tile.replaceTerrain(corpse);
             }

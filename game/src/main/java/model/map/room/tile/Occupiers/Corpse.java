@@ -10,10 +10,12 @@ import model.map.room.tile.Tile;
 public class Corpse implements Terrain {
     private Item[] items;
     private Tile tile;
+    private int gold;
 
-    public Corpse(Item[] items, Tile tile) {
+    public Corpse(Item[] items, Tile tile, int gold) {
         this.items = items;
         this.tile = tile;
+        this.gold = gold;
     }
 
     public void interact(Character character) {

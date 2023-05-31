@@ -32,7 +32,7 @@ public class MultiInventory implements Inventory {
     }
 
     public void destroyItem(int bag, int pos) {
-        if(bag < NUM_BAGS) {
+        if(bag < NUM_BAGS && bag >= 0 && this.bags[bag] != null) {
             this.bags[bag].removeItem(pos);
         }
     }
@@ -52,6 +52,10 @@ public class MultiInventory implements Inventory {
     }
 
     public void addItem(Item item) {
+        if(item == null) {
+            return;
+        }
+
         for(int i = 0; i < NUM_BAGS; i++) {
             if(this.bags[i] != null && !this.bags[i].isFull()) {
                 this.bags[i].addItem(item);
@@ -61,7 +65,7 @@ public class MultiInventory implements Inventory {
     }
 
     public void useItem(int bag, int pos, StatsManager manager) {
-        if(!inBounds(bag)) {
+        if(!inBounds(bag) || this.bags[bag] == null) {
             return;
         }
 
@@ -74,45 +78,32 @@ public class MultiInventory implements Inventory {
         StatsRecord record = item.createRecord();
 
         if(record == null) {
-            Bag newBag = (Bag) item;
-            int idx = this.smallestBagIdx(newBag);
-
-            if(idx < 0) {
+            if(!this.attemptEquipBag(item)) {
                 this.bags[bag].addItem(item, pos);
-                return;
             }
-
-            Bag oldBag = this.bags[idx];
-            oldBag.transferItems(newBag);
-            this.addItem(oldBag);
-            
-            return;
-        }
-
-        if(record.isEquippable()) {
+        } else if(record.isEquippable()) {
             Item oldItem = this.equipped.get(record.getType());
             this.addItem(oldItem);
 
             this.equipped.put(record.getType(), item);
+            manager.addBuff(record);
+        } else {
+            manager.addBuff(record);
         }
-
-        manager.addBuff(record);
     }
 
     public String openInventory() {
-        String output = "Inventory: " + this.gold + " gold\n";
+        String output = "Inventory: " + this.gold + " gold";
 
         for(int i = 0; i < NUM_BAGS; i++) {
             Bag bag = this.bags[i];
-            output += "\t" + (i + 1) + ". ";
+            output += "\n\t" + (i + 1) + ". ";
 
             if(bag == null) {
-                output += " None";
+                output += "None";
             } else {
                 output += bag.openInventory();
             }
-
-            output += "\n";
         }
 
         return output;
@@ -143,6 +134,42 @@ public class MultiInventory implements Inventory {
 
         Item[] items = new Item[allItems.size()];
         return allItems.toArray(items);
+    }
+
+    private boolean attemptEquipBag(Item item) {
+        Bag bag = (Bag) item;
+
+        if(this.attemptInsertNewBag(bag) || this.attemptReplaceBag(bag)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean attemptInsertNewBag(Bag bag) {
+        for(int i = 0; i < NUM_BAGS; i++) {
+            if(this.bags[i] == null) {
+                this.bags[i] = bag;
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    private boolean attemptReplaceBag(Bag bag) {
+        int index = smallestBagIdx(bag);
+
+        if(index < 0) {
+            return false;
+        } else {
+            Bag oldBag = this.bags[index];
+            this.bags[index] = bag;
+            oldBag.transferItems(bag);
+            this.addItem(oldBag);
+
+            return true;
+        }
     }
 
     private boolean inBounds(int bag) {

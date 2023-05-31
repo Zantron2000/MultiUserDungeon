@@ -68,18 +68,16 @@ public class Bag implements Item {
     }
 
     public String openInventory() {
-        String output = this.name + " " + this.capacity + "/" + this.maxCapacity + " capacity\n";
+        String output = this.name + " " + this.capacity + "/" + this.maxCapacity + " capacity";
 
         for(int i = 0; i < this.maxCapacity; i++) {
-            output += "\t\t" + (i + 1) + ". ";
+            output += "\n\t\t" + (i + 1) + ". ";
 
             if(this.items[i] == null) {
                 output += "None";
             } else {
                 output += this.items[i].toString();
             }
-
-            output += "\n";
         }
 
         return output;

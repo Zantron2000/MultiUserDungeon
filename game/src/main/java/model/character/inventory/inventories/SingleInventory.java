@@ -68,7 +68,7 @@ public class SingleInventory implements Inventory {
         String output = "Inventory: " + this.gold + " gold\n\t1. ";
         
         if(this.isFull()) {
-            output += this.item.getDescription();
+            output += this.item.toString();
         } else {
             output += "None";
         }

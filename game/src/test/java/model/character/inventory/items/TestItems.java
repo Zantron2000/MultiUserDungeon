@@ -131,12 +131,12 @@ public class TestItems {
         Item weapon = new Weapon("Dagger", "A dagger", 30, 30);
         Item armor = new Armor("Chainmail", "Chainmail Armor", 30, 30);
 
-        String emptyOutput = "Medium Bag 0/5 capacity\n\t\t1. None\n\t\t2. None\n\t\t3. None\n\t\t4. None\n\t\t5. None\n";
-        String oneItemOutput = "Medium Bag 1/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. None\n\t\t3. None\n\t\t4. None\n\t\t5. None\n";
-        String insertItemOutput = "Medium Bag 2/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. None\n\t\t3. None\n\t\t4. " + armor.toString() + "\n\t\t5. None\n";
-        String fullOutput = "Medium Bag 5/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. " + armor.toString() + "\n\t\t5. " + weapon.toString() + "\n";
-        String removeItemOutput = "Medium Bag 4/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. None\n\t\t5. " + weapon.toString() + "\n";
-        String biggerBagTransfer = "Medium Bag 4/6 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. " + weapon.toString() + "\n\t\t5. None\n\t\t6. None\n";
+        String emptyOutput = "Medium Bag 0/5 capacity\n\t\t1. None\n\t\t2. None\n\t\t3. None\n\t\t4. None\n\t\t5. None";
+        String oneItemOutput = "Medium Bag 1/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. None\n\t\t3. None\n\t\t4. None\n\t\t5. None";
+        String insertItemOutput = "Medium Bag 2/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. None\n\t\t3. None\n\t\t4. " + armor.toString() + "\n\t\t5. None";
+        String fullOutput = "Medium Bag 5/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. " + armor.toString() + "\n\t\t5. " + weapon.toString();
+        String removeItemOutput = "Medium Bag 4/5 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. None\n\t\t5. " + weapon.toString();
+        String biggerBagTransfer = "Medium Bag 4/6 capacity\n\t\t1. " + weapon.toString() + "\n\t\t2. " + weapon.toString() + "\n\t\t3. " + weapon.toString() + "\n\t\t4. " + weapon.toString() + "\n\t\t5. None\n\t\t6. None";
 
         assertEquals(emptyOutput, bag.openInventory(), "The empty bag doesn't match the inventory output");
         assertFalse(bag.isFull(), "The bag shouldn't be full");

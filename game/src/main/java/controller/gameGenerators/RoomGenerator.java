@@ -46,7 +46,7 @@ public class RoomGenerator {
             tile = new Tile(coords, player);
             player.moveOnto(tile);
         } else if(occupier.equals("C")) {
-            Occupier chest = new Chest(ItemGenerator.generateChestItems());
+            Occupier chest = new Chest(ItemGenerator.generateChestItems(), 100);
 
             tile = new Tile(coords, chest);
         } else if(occupier.equals("E")) {

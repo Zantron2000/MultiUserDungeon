@@ -8,9 +8,11 @@ import model.map.room.tile.Occupier;
 
 public class Chest implements Occupier {
     private Item[] items;
+    private int gold;
 
-    public Chest(Item[] items) {
+    public Chest(Item[] items, int gold) {
         this.items = items;
+        this.gold = gold;
     }
 
     public void interact(Character character) {

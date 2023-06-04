@@ -26,12 +26,6 @@ public class SingleInventory implements Inventory {
         this.equipped = new HashMap<>();
     }
 
-    public SingleInventory(int gold, Item item) {
-        this.item = item;
-        this.gold = gold;
-        this.equipped = new HashMap<>();
-    }
-
     public boolean isFull() {
         return this.item != null;
     }

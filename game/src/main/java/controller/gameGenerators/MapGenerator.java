@@ -5,15 +5,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
+import controller.gameController.Game;
 import model.character.characters.PlayerCharacter;
 import model.map.Coordinates;
 import model.map.Map;
 import model.map.room.Room;
 
 public class MapGenerator {
-    public static Map generateMap(String filePath, PlayerCharacter player) {
-        Map map = null;
+    public static Map generateMap(String filePath, PlayerCharacter player, Game game) {
+        Map map = new Map();
 
+        RoomGenerator.setMap(map);
+        RoomGenerator.setGame(game);
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             HashMap<Coordinates, Room> layout = new HashMap<>();
             Room currentRoom = null;
@@ -46,7 +49,7 @@ public class MapGenerator {
                 layout.put(coords, room);
             }
 
-            map = new Map(currentRoom, layout);
+            map.finishSetup(currentRoom, layout);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -40,10 +40,7 @@ public abstract class Character implements Occupier, TurnObserver {
 
     public void takeDamage(int damage) {
         int totalDamage = damage - this.getArmor();
-
-        if(totalDamage <= 0) {
-            totalDamage = 1;
-        }
+        totalDamage = (totalDamage <= 0) ? 1 : totalDamage;
 
         this.manager.takeDamage(damage);
     }
@@ -78,6 +75,9 @@ public abstract class Character implements Occupier, TurnObserver {
     }
 
     public void moveOnto(Tile tile) {
+        if(this.tile != null) {
+            this.tile.removeOccupier();
+        }
         this.tile = tile;
     }
     

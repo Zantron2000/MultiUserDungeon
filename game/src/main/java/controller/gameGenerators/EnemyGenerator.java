@@ -11,7 +11,6 @@ import model.character.characters.DiurnalNPC;
 import model.character.characters.NocturnalNPC;
 import model.character.characters.NonPlayerCharacter;
 import model.character.inventory.Inventory;
-import model.character.inventory.Item;
 import model.character.inventory.inventories.SingleInventory;
 import model.character.stats.Stat;
 import model.character.stats.StatsManager;
@@ -88,7 +87,6 @@ public class EnemyGenerator {
         int randomIdx = EnemyGenerator.generateRandomInt(npcs.size());
 
         NonPlayerCharacter npc = EnemyGenerator.createEnemy(npcs, randomIdx);
-        npc.addItem(ItemGenerator.generateMonsterItem());
 
         return npc;
     }
@@ -98,7 +96,6 @@ public class EnemyGenerator {
 
         String[] enemyData = enemy.split(",");
         String type = enemyData[0];
-        String rarity = enemyData[1];
         String name = enemyData[2];
         String description = enemyData[3];
         int health = Integer.parseInt(enemyData[4]);
@@ -108,7 +105,10 @@ public class EnemyGenerator {
         Stat baseStat = new BaseStat(attack, defense);
         StatsManager manager = new SimpleStatsManager(health, baseStat);
 
+        int gold = EnemyGenerator.generateRandomInt(26);
         Inventory inventory = new SingleInventory();
+        inventory.addGold(gold);
+        inventory.addItem(ItemGenerator.generateMonsterItem());
 
         NonPlayerCharacter npc;
         if (type.equals("diurnal")) {

@@ -61,7 +61,8 @@ public class TestSingleInventory {
     @Test
     public void testDestroyItem() {
         Item item = new Weapon("Weapon", "Weapon", 30, 5);
-        Inventory inventory = new SingleInventory(0, item);
+        Inventory inventory = new SingleInventory(0);
+        inventory.addItem(item);
 
         assertTrue(inventory.isFull(), "The inventory should currently be full");
         inventory.destroyItem(0, 0);

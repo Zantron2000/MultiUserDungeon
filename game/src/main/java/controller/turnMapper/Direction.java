@@ -39,4 +39,27 @@ public enum Direction {
 
         return new Coordinates(row, col);
     }
+
+    public static Direction getReverse(Direction direction) {
+        switch(direction) {
+            case NORTH:
+                return SOUTH;
+            case SOUTH:
+                return NORTH;
+            case EAST:
+                return WEST;
+            case WEST:
+                return EAST;
+            case SOUTH_EAST:
+                return NORTH_WEST;
+            case NORTH_WEST:
+                return SOUTH_EAST;
+            case SOUTH_WEST:
+                return NORTH_EAST;
+            case NORTH_EAST:
+                return SOUTH_WEST;
+            default: 
+                return null;
+        }
+    }
 }

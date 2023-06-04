@@ -27,6 +27,10 @@ public class PlayerTurnMapper implements TurnMapper {
         this.commands = new HashMap<>();
     }
 
+    public HashMap<String, Command> getMoves() {
+        return this.commands;
+    }
+
     public ArrayList<Coordinates> getMoveCoordinates() {
         ArrayList<Coordinates> coords = new ArrayList<>();
 

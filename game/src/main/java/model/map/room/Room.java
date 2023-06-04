@@ -1,6 +1,7 @@
 package model.map.room;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import controller.gameController.TurnObserver;
 import controller.turnMapper.Direction;
@@ -16,13 +17,15 @@ public class Room implements TurnObserver, TimeObserver {
     private Tile[][] layout;
     private ArrayList<TurnObserver> turnObservers;
     private ArrayList<TimeObserver> timeObservers;
+    private HashMap<Direction, Tile> exits;
 
-    public Room(Tile[][] layout, ArrayList<TurnObserver> turnObservers, ArrayList<TimeObserver> timeObservers) {
+    public Room(Tile[][] layout, ArrayList<TurnObserver> turnObservers, ArrayList<TimeObserver> timeObservers, HashMap<Direction, Tile> exits) {
         this.height = layout.length;
         this.width = layout[0].length;
         this.layout = layout;
         this.turnObservers = turnObservers;
         this.timeObservers = timeObservers;
+        this.exits = exits;
     }
 
     public void processTurn() {
@@ -51,6 +54,10 @@ public class Room implements TurnObserver, TimeObserver {
                 this.layout[row][col].acceptTurnGenerator(generator, moveDirection);
             }
         }
+    }
+
+    public Tile getExit(Direction direction) {
+        return this.exits.get(direction);
     }
 
     private boolean inBounds(Coordinates tileCoord) {

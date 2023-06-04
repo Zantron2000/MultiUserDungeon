@@ -2,7 +2,6 @@ package model.character.characters;
 
 import model.character.Character;
 import model.character.inventory.Inventory;
-import model.character.inventory.Item;
 import model.character.stats.StatsManager;
 import model.map.Cycle;
 import model.map.TimeObserver;

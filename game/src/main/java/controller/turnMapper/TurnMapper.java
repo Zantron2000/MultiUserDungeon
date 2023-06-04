@@ -1,6 +1,7 @@
 package controller.turnMapper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import model.character.Character;
 import model.map.Coordinates;
@@ -11,6 +12,8 @@ import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
 public interface TurnMapper {
+    public HashMap<String, Command> getMoves();
+
     public ArrayList<Coordinates> getMoveCoordinates();
 
     public ArrayList<Direction> getMoveDirections();

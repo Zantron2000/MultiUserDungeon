@@ -237,7 +237,6 @@ public class TestMultiInventory {
     public void testDestroyItem() {
         Bag starterBag = new Bag("Bag", "Bag", 5, 5);
         Inventory inventory = new MultiInventory(starterBag);
-        StatsManager manager = new ComplexStatsManager(10, new BaseStat(10, 10));
         String oneBag = "Inventory: 0 gold\n\t1. " + starterBag.openInventory() + "\n\t2. None\n\t3. None\n\t4. None\n\t5. None\n\t6. None";
         Item weapon = new Weapon("Weapon", "Weapon", 30, 10);
 

@@ -13,7 +13,7 @@ public class PlayerGenerator {
     private static int STARTER_BAG_SIZE = 6;
     private static int INIT_HEALTH = 100;
     private static int INIT_ATTACK = 10;
-    private static int INIT_DEFENSE = 10; 
+    private static int INIT_DEFENSE = 0; 
 
     public static PlayerCharacter generatePlayer(String name, String description) {
         Bag bag = new Bag("Backpack", "A starter's backpack", 30, STARTER_BAG_SIZE);

@@ -106,6 +106,6 @@ public abstract class Character implements Occupier, TurnObserver {
     }
 
     public String toString() {
-        return this.name + " - " + this.description + this.manager.toString();
+        return this.name + " - " + this.description + ": " + this.manager.toString();
     }
 }

@@ -27,6 +27,20 @@ public class Corpse implements Terrain {
     }
 
     public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
-        generator.generateCommand(this, direction);
+        if(!isEmpty()) {
+            generator.generateCommand(this, direction);
+        } else {
+            this.tile.removeTerrain();
+        }
+    }
+
+    private boolean isEmpty() {
+        for(int i = 0; i < this.items.length; i++) {
+            if(this.items[i] != null) {
+                return false;
+            }
+        }
+
+        return this.gold == 0;
     }
 }

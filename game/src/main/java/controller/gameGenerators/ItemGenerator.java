@@ -42,7 +42,7 @@ public class ItemGenerator {
 
     private static void loadItemsFromFile(String filePath, String itemType) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
+            String line = reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] itemData = line.split(",");
                 if (itemData.length >= 5) {

@@ -13,6 +13,8 @@ import model.map.room.Room;
 
 public class MapGenerator {
     public static Map generateMap(String filePath, PlayerCharacter player, Game game) {
+        EnemyGenerator.loadEnemies("data/characters/enemies.csv");
+        ItemGenerator.loadItems("data/items/armor.csv", "data/items/bags.csv", "data/items/buffs.csv", "data/items/weapons.csv", "data/items/food.csv");
         Map map = new Map();
 
         RoomGenerator.setMap(map);
@@ -37,7 +39,7 @@ public class MapGenerator {
 
                 String floorPlan = "";
                 for(int r = 0; r < rows; r++) {
-                    floorPlan += reader.readLine();
+                    floorPlan += reader.readLine() + "\n";
                 }
 
                 Room room = RoomGenerator.generateRoom(rows, cols, floorPlan, player);
@@ -47,6 +49,7 @@ public class MapGenerator {
                 }
 
                 layout.put(coords, room);
+                numRooms--;
             }
 
             map.finishSetup(currentRoom, layout);

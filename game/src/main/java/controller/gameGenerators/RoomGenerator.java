@@ -18,6 +18,7 @@ import model.map.room.tile.Terrain;
 import model.map.room.tile.Tile;
 import model.map.room.tile.Occupiers.Chest;
 import model.map.room.tile.Occupiers.Exit;
+import model.map.room.tile.Occupiers.Goal;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
@@ -42,7 +43,7 @@ public class RoomGenerator {
         String[] data = floorPlan.split("\n");
 
         for(int r = 0; r < rows; r++) {
-            String[] strip = data[r].split("|");
+            String[] strip = data[r].split("\\|");
 
             for(int c = 0; c < cols; c++) {
                 Tile tile = RoomGenerator.generateTile(strip[c], r, c, rows, cols, player, turnObservers, timeObservers, exits);
@@ -90,6 +91,10 @@ public class RoomGenerator {
 
             tile = new Tile(coords, exit);
             exits.put(direction, tile);
+        } else if(occupier.equals("Q")) {
+            Goal goal = new Goal(RoomGenerator.game);
+
+            tile = new Tile(coords, goal);
         } else {
             System.out.println("Error: " + occupier);
 

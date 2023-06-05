@@ -5,7 +5,6 @@ import java.util.HashMap;
 
 import controller.gameGenerators.MapGenerator;
 import controller.gameGenerators.PlayerGenerator;
-import controller.gameGenerators.RoomGenerator;
 import controller.turnMapper.Command;
 import controller.turnMapper.TurnMapper;
 import controller.turnMapper.turnMappers.EnemyTurnMapper;
@@ -21,7 +20,7 @@ public class Game {
 
     public Game(String mapFile, String name, String description) {
         this.player = PlayerGenerator.generatePlayer(name, description);
-        this.map = MapGenerator.generateMap(description, player, this);
+        this.map = MapGenerator.generateMap(mapFile, player, this);
         this.moves = null;
         this.escaped = false;
     }
@@ -55,9 +54,9 @@ public class Game {
         }
 
         move.execute();
+        this.executeEnemyMoves();
         this.map.processTurn();
         this.player.processTurn();
-        this.executeEnemyMoves();
 
         return true;
     }

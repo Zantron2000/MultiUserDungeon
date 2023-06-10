@@ -6,6 +6,9 @@ import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Terrain;
 import model.map.room.tile.Tile;
+import view.GamePTUI;
+import view.confirmationPTUI.OccupierPTUI;
+import view.interactionPTUI.CorpsePTUI;
 
 public class Corpse implements Terrain {
     private Item[] items;
@@ -19,11 +22,48 @@ public class Corpse implements Terrain {
     }
 
     public void interact(Character character) {
-        // TODO implement the interaction interface here
+        character.addGold(this.gold);
+        
+        GamePTUI ptui = new CorpsePTUI(character, this, this.gold);
+        this.gold = 0;
+        ptui.run();
+
+        if(this.isEmpty()) {
+            this.tile.removeTerrain();
+        }
     }
 
     public void moveOnto(Character character) {
-        // TODO implement the interaction interface here
+        GamePTUI ptui = new OccupierPTUI(character, this, "Loot from the corpse");
+        ptui.run();
+    }
+
+    public String openInventory() {
+        String output = "Corpse Contents:";
+
+        for(int i = 0; i < this.items.length; i++) {
+            Item item = this.items[i];
+            output += "\n\t" + (i + 1) + ". ";
+            
+            if(item == null) {
+                output += "None";
+            } else {
+                output += item.getDescription();
+            }
+        }
+
+        return output;
+    }
+
+    public Item takeItem(int pos) {
+        if(pos >= 0 && pos < items.length) {
+            Item item = items[pos];
+            items[pos] = null;
+
+            return item;
+        }
+
+        return null;
     }
 
     public void acceptTurnGenerator(TurnMapper generator, Direction direction) {

@@ -1,8 +1,11 @@
 package view;
 
+import view.interactionPTUI.DungeonPTUI;
+
 public class PTUI {
     public static void main(String[] args) {
-        
+        GamePTUI game = new DungeonPTUI("data/maps/premade/starter-map.txt");
+        game.run();
     }
 }
 

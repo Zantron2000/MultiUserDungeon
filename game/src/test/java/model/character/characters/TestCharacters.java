@@ -18,6 +18,8 @@ import model.character.inventory.items.Weapon;
 import model.character.stats.StatsManager;
 import model.character.stats.stat.BaseStat;
 import model.character.stats.statsManager.SimpleStatsManager;
+import model.map.Coordinates;
+import model.map.room.tile.Tile;
 
 @Testable
 public class TestCharacters {
@@ -130,5 +132,15 @@ public class TestCharacters {
         assertEquals(inventory300, character.openInventory(), "The added amount of gold is wrong");
     }
 
-    
+    @Test
+    public void testMoveOnto() {
+        Character character = PlayerGenerator.generatePlayer("null", "null");
+        Tile tile = new Tile(new Coordinates(0, 0));
+        Tile nextTile = new Tile(new Coordinates(0, 1));
+
+        character.moveOnto(tile);
+        assertEquals(character.getCoordinates(), new Coordinates(0, 0), "The coordinates of the player are wrong");
+        character.moveOnto(nextTile);
+        assertEquals(character.getCoordinates(), new Coordinates(0, 1), "The coordinates of the player is wrong");
+    }
 }

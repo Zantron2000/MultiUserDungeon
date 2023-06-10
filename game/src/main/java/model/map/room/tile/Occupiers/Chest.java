@@ -5,6 +5,8 @@ import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Occupier;
+import view.GamePTUI;
+import view.interactionPTUI.ChestPTUI;
 
 public class Chest implements Occupier {
     private Item[] items;
@@ -16,10 +18,14 @@ public class Chest implements Occupier {
     }
 
     public void interact(Character character) {
-        // TODO implement the interaction interface here
+        character.addGold(this.gold);
+        
+        GamePTUI ptui = new ChestPTUI(character, this, this.gold);
+        this.gold = 0;
+        ptui.run();
     }
 
-    private Item takeItem(int pos) {
+    public Item takeItem(int pos) {
         if(pos >= 0 && pos < items.length) {
             Item item = items[pos];
             items[pos] = null;
@@ -28,6 +34,23 @@ public class Chest implements Occupier {
         }
 
         return null;
+    }
+
+    public String openInventory() {
+        String output = "Chest Contents:";
+
+        for(int i = 0; i < this.items.length; i++) {
+            Item item = this.items[i];
+            output += "\n\t" + (i + 1) + ". ";
+            
+            if(item == null) {
+                output += "None";
+            } else {
+                output += item.getDescription();
+            }
+        }
+
+        return output;
     }
 
     public void acceptTurnGenerator(TurnMapper generator, Direction direction) {

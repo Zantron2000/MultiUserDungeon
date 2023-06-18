@@ -7,19 +7,25 @@ import model.map.room.tile.Tile;
 public class MoveCommand implements Command {
     private Character character;
     private Tile tile;
-    private String description;
+    private String action;
+    private String result;
 
-    public MoveCommand(Character character, Tile tile, String direction) {
+    public MoveCommand(Character character, Tile tile, String action) {
         this.character = character;
         this.tile = tile;
-        this.description = "Move to the " + direction;
+        this.action = action;
+        this.result = "This command hasn't been executed yet";
     }
 
     public void execute() {
-        this.tile.occupy(character);
+        this.result = this.tile.occupy(character);
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getAction() {
+        return this.action;
+    }
+
+    public String getResults() {
+        return this.result;
     }
 }

@@ -4,5 +4,7 @@ import controller.turnMapper.TurnElement;
 import model.character.Character;
 
 public interface Occupier extends TurnElement {
-    public void interact(Character character);
+    public String interact(Character character);
+
+    public char getIcon();
 }

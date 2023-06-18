@@ -7,6 +7,8 @@ import model.character.Character;
 import model.map.Coordinates;
 
 public class Tile implements TurnElement {
+    private static char ICON = ' ';
+
     private Terrain terrain;
     private Occupier occupier;
     private Coordinates coords;
@@ -29,12 +31,16 @@ public class Tile implements TurnElement {
         this.terrain = null;
     }
 
-    public void occupy(Character character) {
-        if(!isNull(terrain)) {
-            terrain.moveOnto(character);
-        }
+    public String occupy(Character character) {
+        String terrainResult = "";
 
+        if(!isNull(terrain)) {
+            terrainResult = terrain.moveOnto(character);
+        }
+        this.occupier = character;
         character.moveOnto(this);
+
+        return character.toString() + " moved to the next tile. " + terrainResult;
     }
 
     public void replaceTerrain(Terrain terrain) {
@@ -69,6 +75,16 @@ public class Tile implements TurnElement {
             generator.generateCommand(this, direction);
         } else {
             generator.generateCommand(this, direction);
+        }
+    }
+
+    public char getIcon() {
+        if(!this.isNull(occupier)) {
+            return this.occupier.getIcon();
+        } else if(!this.isNull(terrain)) {
+            return this.terrain.getIcon();
+        } else {
+            return Tile.ICON;
         }
     }
 }

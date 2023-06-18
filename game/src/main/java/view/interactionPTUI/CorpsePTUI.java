@@ -1,18 +1,17 @@
 package view.interactionPTUI;
 
-import model.map.room.tile.Occupiers.Corpse;
-import view.GamePTUI;
-
 import java.util.Scanner;
 
 import model.character.Character;
 import model.character.inventory.Item;
+import model.map.room.tile.Occupiers.Corpse;
+import view.GamePTUI;
 
 public class CorpsePTUI implements GamePTUI {
     private Character player;
     private Corpse corpse;
 
-    public CorpsePTUI(model.character.Character player, Corpse corpse, int gold) {
+    public CorpsePTUI(Character player, Corpse corpse, int gold) {
         this.player = player;
         this.corpse = corpse;
         System.out.println(gold + " gold peices were taken from the corpse");

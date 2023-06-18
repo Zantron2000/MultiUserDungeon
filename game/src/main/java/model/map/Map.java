@@ -44,4 +44,8 @@ public class Map implements TurnObserver {
     public void generateMoves(TurnMapper generator) {
         this.currentRoom.generateMoves(generator);
     }
+
+    public String getRoomLayout() {
+        return this.currentRoom.getLayout();
+    }
 }

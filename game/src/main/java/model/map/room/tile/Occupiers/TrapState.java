@@ -8,4 +8,6 @@ public interface TrapState {
     public int triggerTrap();
 
     public int attemptDisarm();
+
+    public char getIcon();
 }

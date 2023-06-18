@@ -12,6 +12,8 @@ import model.map.Coordinates;
 import model.map.room.tile.Tile;
 import model.map.room.tile.Occupiers.Chest;
 import model.map.room.tile.Occupiers.Corpse;
+import model.map.room.tile.Occupiers.Exit;
+import model.map.room.tile.Occupiers.Goal;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
@@ -64,7 +66,9 @@ public class EnemyTurnMapper implements TurnMapper {
 
     public void generateCommand(Character attacker, Direction direction) {
         String key = "attack " + direction.toString();
-        Command value = new InteractCommand(attacker, attackee, "Player", direction.toString());
+        String action = attacker.toString() + " attacks the player";
+
+        Command value = new InteractCommand(attacker, attackee, action);
 
         commands.put(key, value);
     };
@@ -75,5 +79,9 @@ public class EnemyTurnMapper implements TurnMapper {
 
     public void generateCommand(Trap trap, Direction direction) {};
 
+    public void generateCommand(Exit trap, Direction direction) {};
+
+    public void generateCommand(Goal trap, Direction direction) {};
+    
     public void generateCommand(Tile tile, Direction direction) {};
 }

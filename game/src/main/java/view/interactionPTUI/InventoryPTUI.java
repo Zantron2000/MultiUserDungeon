@@ -40,6 +40,7 @@ public class InventoryPTUI implements GamePTUI {
         System.out.println(this.player.openInventory());
         
         while(true) {
+            System.out.println("-----------------------------");
             data = scanner.nextLine().split(" ");
 
             try {

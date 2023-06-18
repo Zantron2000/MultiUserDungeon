@@ -9,6 +9,8 @@ import view.GamePTUI;
 import view.interactionPTUI.ChestPTUI;
 
 public class Chest implements Occupier {
+    private static char ICON = 'C';
+
     private Item[] items;
     private int gold;
 
@@ -17,12 +19,14 @@ public class Chest implements Occupier {
         this.gold = gold;
     }
 
-    public void interact(Character character) {
+    public String interact(Character character) {
         character.addGold(this.gold);
         
         GamePTUI ptui = new ChestPTUI(character, this, this.gold);
         this.gold = 0;
         ptui.run();
+
+        return character.toString() + " finished looting the chest";
     }
 
     public Item takeItem(int pos) {
@@ -55,5 +59,9 @@ public class Chest implements Occupier {
 
     public void acceptTurnGenerator(TurnMapper generator, Direction direction) {
         generator.generateCommand(this, direction);
+    }
+
+    public char getIcon() {
+        return Chest.ICON;
     }
 }

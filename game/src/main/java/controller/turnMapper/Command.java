@@ -3,5 +3,7 @@ package controller.turnMapper;
 public interface Command {
     public void execute();
 
-    public String getDescription();
+    public String getAction();
+
+    public String getResults();
 }

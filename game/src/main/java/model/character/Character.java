@@ -85,20 +85,26 @@ public abstract class Character implements Occupier, TurnObserver {
         return this.tile.getCoordinates();
     }
 
-    public void interact(Character character) {
+    public String interact(Character character) {
         int damage = character.getDamage();
         this.takeDamage(damage);
 
         if(this.isDead()) {
             this.tile.removeOccupier();
             Item[] items = this.inventory.corpsify();
+            int gold = this.inventory.emptyGold();
 
-            if(items.length > 0) {
-                Terrain corpse = new Corpse(items, this.tile, this.inventory.emptyGold());
+            if(items.length > 0 || gold > 0) {
+                Terrain corpse = new Corpse(items, this.tile, gold);
 
                 this.tile.replaceTerrain(corpse);
+                return character.toString() + " killed " + this.toString() + ", who dropped dead";
             }
+
+            return character.toString() + " killed " + this.toString() + ", who turned into dust";
         }
+
+        return character.toString() + " damaged " + this.toString();
     }
 
     public void acceptTurnGenerator(TurnMapper generator, Direction direction) {

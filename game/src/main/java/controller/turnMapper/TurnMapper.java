@@ -8,6 +8,8 @@ import model.map.Coordinates;
 import model.map.room.tile.Tile;
 import model.map.room.tile.Occupiers.Chest;
 import model.map.room.tile.Occupiers.Corpse;
+import model.map.room.tile.Occupiers.Exit;
+import model.map.room.tile.Occupiers.Goal;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
@@ -27,6 +29,10 @@ public interface TurnMapper {
     public void generateCommand(Corpse corpse, Direction direction);
 
     public void generateCommand(Trap trap, Direction direction);
+
+    public void generateCommand(Exit exit, Direction direction);
+
+    public void generateCommand(Goal goal, Direction direction);
 
     public void generateCommand(Tile tile, Direction direction);
 }

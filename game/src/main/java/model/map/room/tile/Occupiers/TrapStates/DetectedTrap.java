@@ -4,6 +4,7 @@ import model.map.room.tile.Occupiers.Trap;
 import model.map.room.tile.Occupiers.TrapState;
 
 public class DetectedTrap implements TrapState {
+    private static char ICON = '_';
     private static boolean DISARMED = false;
     private static boolean SEEN = true;
     private static double DiSARM_CHANCE = 0.50;
@@ -39,5 +40,9 @@ public class DetectedTrap implements TrapState {
         this.trap.setTrapState(new TriggeredTrap());
 
         return this.damage;
+    }
+
+    public char getIcon() {
+        return DetectedTrap.ICON;
     }
 }

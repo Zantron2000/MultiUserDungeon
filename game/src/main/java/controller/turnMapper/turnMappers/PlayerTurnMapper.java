@@ -13,6 +13,8 @@ import model.map.Coordinates;
 import model.map.room.tile.Tile;
 import model.map.room.tile.Occupiers.Chest;
 import model.map.room.tile.Occupiers.Corpse;
+import model.map.room.tile.Occupiers.Exit;
+import model.map.room.tile.Occupiers.Goal;
 import model.map.room.tile.Occupiers.Obstacle;
 import model.map.room.tile.Occupiers.Trap;
 
@@ -59,35 +61,63 @@ public class PlayerTurnMapper implements TurnMapper {
 
     public void generateCommand(Character enemy, Direction direction) {
         String key = "interact " + direction.toString();
-        Command value = new InteractCommand(this.interacter, enemy, "Enemy", direction.toString());
+        String action = "Fight " + enemy.toString() + " to the " + direction.toString();
+
+        Command value = new InteractCommand(this.interacter, enemy, action);
 
         commands.put(key, value);
     }
 
     public void generateCommand(Chest chest, Direction direction) {
         String key = "interact " + direction.toString();
-        Command value = new InteractCommand(interacter, chest, "Chest", direction.toString());
+        String action = "Loot a chest to the " + direction.toString();
+
+        Command value = new InteractCommand(interacter, chest, action);
 
         commands.put(key, value);
     }
 
     public void generateCommand(Corpse corpse, Direction direction) {
         String key = "interact " + direction.toString();
-        Command value = new InteractCommand(interacter, corpse, "Corpse", direction.toString());
+        String action = "Loot a corpse to the " + direction.toString();
+
+        Command value = new InteractCommand(interacter, corpse, action);
 
         commands.put(key, value);
     }
 
     public void generateCommand(Trap trap, Direction direction) {
         String key = "interact " + direction.toString();
-        Command value = new InteractCommand(interacter, trap, "Trap", direction.toString());
+        String action = "Disarm the trap to the " + direction.toString();
+
+        Command value = new InteractCommand(interacter, trap, action);
+
+        commands.put(key, value);
+    }
+
+    public void generateCommand(Exit exit, Direction direction) {
+        String key = "interact " + direction.toString();
+        String action = "Exit to the next room towards the " + direction.toString();
+
+        Command value = new InteractCommand(interacter, exit, action);
+
+        commands.put(key, value);
+    }
+
+    public void generateCommand(Goal goal, Direction direction) {
+        String key = "interact " + direction.toString();
+        String action = "Escape the dungeon through the " + direction.toString() + " portal";
+
+        Command value = new InteractCommand(interacter, goal, action);
 
         commands.put(key, value);
     }
 
     public void generateCommand(Tile tile, Direction direction) {
         String key = "move " + direction.toString();
-        Command value = new MoveCommand(interacter, tile, direction.toString());
+        String action = "Move onto the " + direction.toString() + " tile";
+
+        Command value = new MoveCommand(interacter, tile, action);
 
         commands.put(key, value);
     }

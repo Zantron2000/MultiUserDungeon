@@ -8,6 +8,8 @@ import model.map.TimeObserver;
 import model.map.room.tile.Tile;
 
 public abstract class NonPlayerCharacter extends Character implements TimeObserver {
+    private static char ICON = 'N';
+
     private Cycle cycle;
     private boolean boosted;
     private double buff;
@@ -37,5 +39,9 @@ public abstract class NonPlayerCharacter extends Character implements TimeObserv
         double modifier = boosted ? buff : debuff;
 
         return (int) (modifier * super.getArmor());
+    }
+
+    public char getIcon() {
+        return NonPlayerCharacter.ICON;
     }
 }

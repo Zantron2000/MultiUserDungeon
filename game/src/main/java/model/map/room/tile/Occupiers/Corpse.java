@@ -7,10 +7,11 @@ import model.character.inventory.Item;
 import model.map.room.tile.Terrain;
 import model.map.room.tile.Tile;
 import view.GamePTUI;
-import view.confirmationPTUI.OccupierPTUI;
 import view.interactionPTUI.CorpsePTUI;
 
 public class Corpse implements Terrain {
+    private static char ICON = 'D';
+
     private Item[] items;
     private Tile tile;
     private int gold;
@@ -21,7 +22,7 @@ public class Corpse implements Terrain {
         this.gold = gold;
     }
 
-    public void interact(Character character) {
+    public String interact(Character character) {
         character.addGold(this.gold);
         
         GamePTUI ptui = new CorpsePTUI(character, this, this.gold);
@@ -30,12 +31,15 @@ public class Corpse implements Terrain {
 
         if(this.isEmpty()) {
             this.tile.removeTerrain();
+
+            return "The corpse reduced to rubble";
         }
+
+        return "Finished looting the corpse";
     }
 
-    public void moveOnto(Character character) {
-        GamePTUI ptui = new OccupierPTUI(character, this, "Loot from the corpse");
-        ptui.run();
+    public String moveOnto(Character character) {
+        return "Stepped onto a rotting corpse";
     }
 
     public String openInventory() {
@@ -82,5 +86,9 @@ public class Corpse implements Terrain {
         }
 
         return this.gold == 0;
+    }
+
+    public char getIcon() {
+        return Corpse.ICON;
     }
 }

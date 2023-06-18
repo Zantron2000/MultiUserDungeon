@@ -33,6 +33,10 @@ public class Game {
         this.escaped = true;
     }
 
+    public String getRoomLayout() {
+        return this.map.getRoomLayout();
+    }
+
     public ArrayList<String> getPlayerMoves() {
         TurnMapper mapper = new PlayerTurnMapper(player);
         this.moves = this.getMoves(mapper);
@@ -40,17 +44,17 @@ public class Game {
         ArrayList<String> moveDescriptions = new ArrayList<>();
 
         for(String key : this.moves.keySet()) {
-            moveDescriptions.add(key + " - " + this.moves.get(key).getDescription());
+            moveDescriptions.add(key + " - " + this.moves.get(key).getAction());
         }
 
         return moveDescriptions;
     }
 
-    public boolean executeMove(String command) {
+    public String executeMove(String command) {
         Command move = this.moves.getOrDefault(command, null);
 
         if(move == null) {
-            return false;
+            return "Invalid move";
         }
 
         move.execute();
@@ -58,8 +62,8 @@ public class Game {
         this.map.processTurn();
         this.player.processTurn();
 
-        return true;
-    }
+        return move.getResults();
+    } 
 
     private void executeEnemyMoves() {
         TurnMapper mapper = new EnemyTurnMapper(player);

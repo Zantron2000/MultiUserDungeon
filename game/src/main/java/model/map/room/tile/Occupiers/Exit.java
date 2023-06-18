@@ -5,10 +5,9 @@ import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.map.Map;
 import model.map.room.tile.Terrain;
-import view.GamePTUI;
-import view.confirmationPTUI.OccupierPTUI;
-
 public class Exit implements Terrain {
+    private static char ICON = 'E';
+
     private Direction direction;
     private Map map;
 
@@ -17,16 +16,21 @@ public class Exit implements Terrain {
         this.map = map;
     }
 
-    public void interact(Character character) {
+    public String interact(Character character) {
         this.map.moveRooms(character, direction);
+
+        return character.toString() + " moved to the next room";
     }
 
-    public void moveOnto(Character character) {
-        GamePTUI ptui = new OccupierPTUI(character, this, "Take the " + this.direction + " exit");
-        ptui.run();
+    public String moveOnto(Character character) {
+        return "Stepped onto an exit";
     }
 
     public void acceptTurnGenerator(TurnMapper mapper, Direction direction) {
-        // TODO make method for mapper and call here
+        mapper.generateCommand(this, direction);
+    }
+
+    public char getIcon() {
+        return Exit.ICON;
     }
 }

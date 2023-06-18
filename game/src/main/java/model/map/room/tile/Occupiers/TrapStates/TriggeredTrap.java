@@ -3,6 +3,7 @@ package model.map.room.tile.Occupiers.TrapStates;
 import model.map.room.tile.Occupiers.TrapState;
 
 public class TriggeredTrap implements TrapState {
+    private static char ICON = 'V';
     private static boolean DISARMED = false;
     private static boolean SEEN = false;
     private static int DAMAGE = 0;
@@ -21,5 +22,9 @@ public class TriggeredTrap implements TrapState {
 
     public int triggerTrap() {
         return TriggeredTrap.DAMAGE;
+    }
+
+    public char getIcon() {
+        return TriggeredTrap.ICON;
     }
 }

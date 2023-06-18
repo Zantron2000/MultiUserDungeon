@@ -7,19 +7,25 @@ import model.map.room.tile.Occupier;
 public class InteractCommand implements Command {
     private Character character;
     private Occupier occupier;
-    private String description;
+    private String action;
+    private String result;
 
-    public InteractCommand(Character character, Occupier occupier, String type, String direction) {
+    public InteractCommand(Character character, Occupier occupier, String action) {
         this.character = character;
         this.occupier = occupier;
-        this.description = "Interact with " + type + " to the " + direction;
+        this.action = action;
+        this.result = "This command hasn't been executed yet";
     }
 
     public void execute() {
-        this.occupier.interact(this.character);
+        this.result = this.occupier.interact(this.character);
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getAction() {
+        return this.action;
+    }
+
+    public String getResults() {
+        return this.result;
     }
 }

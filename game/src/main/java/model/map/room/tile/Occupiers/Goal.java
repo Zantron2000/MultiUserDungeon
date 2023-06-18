@@ -5,26 +5,31 @@ import controller.turnMapper.Direction;
 import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.map.room.tile.Terrain;
-import view.GamePTUI;
-import view.confirmationPTUI.OccupierPTUI;
 
 public class Goal implements Terrain {
+    private static char ICON = 'G';
+
     private Game game;
 
     public Goal(Game game) {
         this.game = game;
     }
 
-    public void interact(Character character) {
+    public String interact(Character character) {
         this.game.notifyEscape();
+
+        return "The player has escaped from the dungeon";
     }
 
-    public void moveOnto(Character character) {
-        GamePTUI ptui = new OccupierPTUI(character, this, "Exit from the dungeon");
-        ptui.run();
+    public String moveOnto(Character character) {
+        return "Stepped onto the portal of freedom";
     }
 
     public void acceptTurnGenerator(TurnMapper mapper, Direction direction) {
-        // TODO make method for mapper and call here
+        mapper.generateCommand(this, direction);
+    }
+
+    public char getIcon() {
+        return Goal.ICON;
     }
 }

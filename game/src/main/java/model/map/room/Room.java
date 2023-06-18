@@ -40,6 +40,20 @@ public class Room implements TurnObserver, TimeObserver {
         }
     }
 
+    public String getLayout() {
+        String output = "";
+
+        for(int i = 0; i < this.layout.length; i++) {
+            for(int j = 0; j < this.layout[i].length; j++) {
+                output += "|" + this.layout[i][j].getIcon();
+            }
+
+            output += "|\n";
+        }
+
+        return output.trim();
+    }
+
     public void generateMoves(TurnMapper generator) {
         ArrayList<Coordinates> moveCoords = generator.getMoveCoordinates();
         ArrayList<Direction> moveDirections = generator.getMoveDirections();

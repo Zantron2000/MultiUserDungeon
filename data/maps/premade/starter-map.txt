@@ -2,6 +2,6 @@ Test Map
 1
 0 0
 3 3
-O|O|O
+O|C|O
 O|P|O
 O|B|O

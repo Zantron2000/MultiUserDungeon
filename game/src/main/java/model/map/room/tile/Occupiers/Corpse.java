@@ -6,8 +6,6 @@ import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Terrain;
 import model.map.room.tile.Tile;
-import view.GamePTUI;
-import view.interactionPTUI.CorpsePTUI;
 
 public class Corpse implements Terrain {
     private static char ICON = 'D';
@@ -23,19 +21,17 @@ public class Corpse implements Terrain {
     }
 
     public String interact(Character character) {
-        character.addGold(this.gold);
-        
-        GamePTUI ptui = new CorpsePTUI(character, this, this.gold);
+        int taken = this.gold;
         this.gold = 0;
-        ptui.run();
+        character.addGold(taken);
 
         if(this.isEmpty()) {
             this.tile.removeTerrain();
 
-            return "The corpse reduced to rubble";
+            return "Looted " + taken + "gold. The corpse crumbles into dust";
         }
 
-        return "Finished looting the corpse";
+        return "Looted " + taken + "gold. Finished looting the corpse";
     }
 
     public String moveOnto(Character character) {

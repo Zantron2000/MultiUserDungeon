@@ -5,8 +5,6 @@ import controller.turnMapper.TurnMapper;
 import model.character.Character;
 import model.character.inventory.Item;
 import model.map.room.tile.Occupier;
-import view.GamePTUI;
-import view.interactionPTUI.ChestPTUI;
 
 public class Chest implements Occupier {
     private static char ICON = 'C';
@@ -20,13 +18,11 @@ public class Chest implements Occupier {
     }
 
     public String interact(Character character) {
-        character.addGold(this.gold);
-        
-        GamePTUI ptui = new ChestPTUI(character, this, this.gold);
+        int taken = this.gold;
         this.gold = 0;
-        ptui.run();
+        character.addGold(taken);
 
-        return character.toString() + " finished looting the chest";
+        return character.toString() + " found " + taken + " gold";
     }
 
     public Item takeItem(int pos) {

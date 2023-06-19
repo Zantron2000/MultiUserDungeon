@@ -3,6 +3,7 @@ package controller.gameController;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import controller.InventoryManagement.InventoryController;
 import controller.gameGenerators.MapGenerator;
 import controller.gameGenerators.PlayerGenerator;
 import controller.turnMapper.Command;
@@ -11,6 +12,7 @@ import controller.turnMapper.turnMappers.EnemyTurnMapper;
 import controller.turnMapper.turnMappers.PlayerTurnMapper;
 import model.character.characters.PlayerCharacter;
 import model.map.Map;
+import view.interactionPTUI.DungeonPTUI;
 
 public class Game {
     private boolean escaped;
@@ -37,8 +39,8 @@ public class Game {
         return this.map.getRoomLayout();
     }
 
-    public ArrayList<String> getPlayerMoves() {
-        TurnMapper mapper = new PlayerTurnMapper(player);
+    public ArrayList<String> getPlayerMoves(DungeonPTUI ptui) {
+        TurnMapper mapper = new PlayerTurnMapper(player, ptui);
         this.moves = this.getMoves(mapper);
 
         ArrayList<String> moveDescriptions = new ArrayList<>();
@@ -63,7 +65,11 @@ public class Game {
         this.player.processTurn();
 
         return move.getResults();
-    } 
+    }
+    
+    public InventoryController manageInventory() {
+        return new InventoryController(this.player);
+    }
 
     private void executeEnemyMoves() {
         TurnMapper mapper = new EnemyTurnMapper(player);

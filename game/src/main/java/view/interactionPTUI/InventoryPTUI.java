@@ -4,13 +4,15 @@ import view.GamePTUI;
 
 import java.util.Scanner;
 
-import model.character.Character;
+import controller.InventoryManagement.InventoryController;
 
 public class InventoryPTUI implements GamePTUI {
-    private Character player;
+    private InventoryController player;
+    private Scanner scanner;
 
-    public InventoryPTUI(Character player) {
+    public InventoryPTUI(InventoryController player, Scanner scanner) {
         this.player = player;
+        this.scanner = scanner;
     }
 
     private void printHelp() {
@@ -35,13 +37,12 @@ public class InventoryPTUI implements GamePTUI {
     }
 
     public void run() {
-        Scanner scanner = new Scanner(System.in);
         String[] data;
-        System.out.println(this.player.openInventory());
+        System.out.println(this.player.openCharacterInventory());
         
         while(true) {
             System.out.println("-----------------------------");
-            data = scanner.nextLine().split(" ");
+            data = this.scanner.nextLine().split(" ");
 
             try {
                 if(data[0].equals("use")) {
@@ -49,10 +50,9 @@ public class InventoryPTUI implements GamePTUI {
                 } else if(data[0].equals("destroy")) {
                     this.destroyItem(Integer.parseInt(data[1]), Integer.parseInt(data[2]));
                 } else if(data[0].equals("exit")) {
-                    scanner.close();
                     break;
                 } else if(data[0].equals("open")) {
-                    System.out.println(this.player.openInventory());
+                    System.out.println(this.player.openCharacterInventory());
                 } else {
                     this.printHelp();
                 }
